@@ -1,16 +1,72 @@
-// Deep and shallow model
+// 深浅模式
 :root {
   color-scheme: light dark;
 
-  --textOrigin: 255, 255, 255;
+  --positiveOrigin: 10, 122, 255;
+  --orangeOrigin: 255, 149, 0;
+  --redOrigin: 255, 59, 48;
+  --quaternaryTextOrigin: 179, 179, 179;
+  --tertiaryTextOrigin: 138, 138, 138;
+  --secondaryTextOrigin: 92, 92, 92;
+  --primaryTextOrigin: 15, 15, 15;
+  --cardBackgroundOrigin: 255, 255, 255;
+  --primaryBackgroundOrigin: 255, 255, 255;
+  --tipsBackgroundOrigin: 15, 15, 15;
+  --primaryButtonOrigin: 52, 60, 81;
+  --secondaryBackgroundOrigin: 242, 242, 247;
+  --primaryDividerOrigin: 242, 242, 247;
+  --tertiaryBackgroundOrigin: 246, 247, 249;
+  --secondaryButtonOrigin: 246, 247, 249;
 
-  --text: rgb(var(--textOrigin));
+  --positive: rgb(var(--positiveOrigin));
+  --orange: rgb(var(--orangeOrigin));
+  --red: rgb(var(--redOrigin));
+  --quaternaryText: rgb(var(--quaternaryTextOrigin));
+  --tertiaryText: rgb(var(--tertiaryTextOrigin));
+  --secondaryText: rgb(var(--secondaryTextOrigin));
+  --primaryText: rgb(var(--primaryTextOrigin));
+  --cardBackground: rgb(var(--cardBackgroundOrigin));
+  --primaryBackground: rgb(var(--primaryBackgroundOrigin));
+  --tipsBackground: rgb(var(--tipsBackgroundOrigin));
+  --primaryButton: rgb(var(--primaryButtonOrigin));
+  --secondaryBackground: rgb(var(--secondaryBackgroundOrigin));
+  --primaryDivider: rgb(var(--primaryDividerOrigin));
+  --tertiaryBackground: rgb(var(--tertiaryBackgroundOrigin));
+  --secondaryButton: rgb(var(--secondaryButtonOrigin));
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --textOrigin: 0, 0, 0;
+    --positiveOrigin: 10, 132, 255;
+    --orangeOrigin: 255, 159, 10;
+    --redOrigin: 255, 69, 58;
+    --quaternaryTextOrigin: 96, 96, 98;
+    --tertiaryTextOrigin: 141, 141, 142;
+    --secondaryTextOrigin: 187, 187, 187;
+    --primaryTextOrigin: 232, 232, 232;
+    --cardBackgroundOrigin: 39, 39, 39;
+    --primaryBackgroundOrigin: 28, 28, 30;
+    --tipsBackgroundOrigin: 106, 106, 106;
+    --primaryButtonOrigin: 68, 81, 105;
+    --secondaryBackgroundOrigin: 28, 28, 30;
+    --primaryDividerOrigin: 51, 51, 53;
+    --tertiaryBackgroundOrigin: 28, 28, 30;
+    --secondaryButtonOrigin: 51, 51, 53;
 
-    --text: rgb(var(--textOrigin));
+    --positive: rgb(var(--positiveOrigin));
+    --orange: rgb(var(--orangeOrigin));
+    --red: rgb(var(--redOrigin));
+    --quaternaryText: rgb(var(--quaternaryTextOrigin));
+    --tertiaryText: rgb(var(--tertiaryTextOrigin));
+    --secondaryText: rgb(var(--secondaryTextOrigin));
+    --primaryText: rgb(var(--primaryTextOrigin));
+    --cardBackground: rgb(var(--cardBackgroundOrigin));
+    --primaryBackground: rgb(var(--primaryBackgroundOrigin));
+    --tipsBackground: rgb(var(--tipsBackgroundOrigin));
+    --primaryButton: rgb(var(--primaryButtonOrigin));
+    --secondaryBackground: rgb(var(--secondaryBackgroundOrigin));
+    --primaryDivider: rgb(var(--primaryDividerOrigin));
+    --tertiaryBackground: rgb(var(--tertiaryBackgroundOrigin));
+    --secondaryButton: rgb(var(--secondaryButtonOrigin));
   }
 }

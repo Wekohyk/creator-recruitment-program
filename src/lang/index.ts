@@ -1,19 +1,67 @@
+import zh from './zh.json';
+import en from './en.json';
+import jp from './ja.json';
 import { createI18n } from 'vue-i18n';
-import zh from './zh.ts';
-import en from './en.ts';
-import jp from './jp.ts';
-import { getLocale } from './tool';
+import { getLocale } from '@/utils/tool';
+import { Locale } from 'vant';
+import enUS from 'vant/es/locale/lang/en-US';
+import zhCN from 'vant/es/locale/lang/zh-CN';
+import jaJP from 'vant/es/locale/lang/ja-JP';
 
-// 约束所有lang对象为typeof zh
-const i18n = createI18n({
-  locale: getLocale(),
-  messages: {
-    zh,
-    en,
-    jp,
+const languages = {
+  zh,
+  en,
+  jp,
+};
+const initLocale = getLocale();
+const setVantLocale = {
+  zh: () => {
+    Locale.use('zh-CN', zhCN);
   },
+  en: () => {
+    Locale.use('en-US', enUS);
+  },
+  jp: () => {
+    Locale.use('ja-JP', jaJP);
+  },
+};
+const i18n = createI18n({
+  locale: initLocale,
+  messages: languages,
   legacy: false,
+  fallbackLocale: {
+    zh: ['en', 'jp'],
+    en: ['zh', 'jp'],
+    jp: ['en', 'zh'],
+  },
 });
-export const getI18nGlobal = () => i18n.global;
-export const $t = i18n.global.t.bind(i18n.global);
-export default i18n;
+
+//设置vant语言
+setVantLocale[initLocale]();
+
+// 此处根据实际情况修改
+// if (!tw.isPolyfill) {
+//   tw.observeLanguageChanged(lang => {
+//     /**
+//      * 由于tw.language 更新不及时，所以必须传入给getLocale
+//      */
+//     const locale = getLocale(lang);
+//     console.log('change', lang);
+//     console.log('cur', locale);
+
+//     setVantLocale[locale]();
+//     i18n.global.locale.value = locale;
+//   });
+// }
+
+export function getI18nGlobal() {
+  return i18n.global;
+}
+
+export function getI18n() {
+  return i18n;
+}
+
+export function getI18nLocale() {
+  return i18n.global.locale;
+}
