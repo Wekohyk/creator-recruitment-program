@@ -1,8 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>App router</div>
-  <div class="text-40">{{ $t('name') }}</div>
+  <div></div>
 </template>
 
 <style scoped lang="scss"></style>
