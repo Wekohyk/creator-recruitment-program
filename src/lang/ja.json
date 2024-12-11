@@ -1,5 +1,9 @@
 {
   "data_statistics": {
-    "index": "データ統計"
+    "index": "データ統計",
+    "login": {
+      "title": "作品は空です~",
+      "content": "パソコンでコンポーネントを作成してください"
+    }
   }
 }

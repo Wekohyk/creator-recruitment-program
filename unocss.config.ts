@@ -1,4 +1,4 @@
-import { defineConfig, toEscapedSelector as e } from 'unocss';
+import { defineConfig, presetIcons, toEscapedSelector as e } from 'unocss';
 import presetWind from '@unocss/preset-wind';
 import presetRemToPx from './src/assets/uno/preset-rem-to-px';
 import presetResolveRpx from './src/assets/uno/preset-resolve-rpx';
@@ -19,6 +19,15 @@ export default defineConfig({
     presetWind(),
     presetRemToPx({ baseFontSize: 4 }),
     presetResolveRpx(),
+    presetIcons({
+      /* options */
+      extraProperties: {
+        display: 'inline-block',
+        'vertical-align': 'middle',
+      },
+      // 按需引入的图标
+      collections: {},
+    }),
   ],
   transformers: [transformerVariantGroup()],
   rules: [

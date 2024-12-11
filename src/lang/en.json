@@ -1,5 +1,9 @@
 {
   "data_statistics": {
-    "index": "Data Statistics"
+    "index": "Data Statistics",
+    "login": {
+      "title": "The work is empty~",
+      "content": "Please use a computer to create the component"
+    }
   }
 }

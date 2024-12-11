@@ -1,5 +1,9 @@
 {
   "data_statistics": {
-    "index": "数据统计"
+    "index": "数据统计",
+    "login": {
+      "title": "作品空空如也~",
+      "content": "请使用电脑端制作组件"
+    }
   }
 }
