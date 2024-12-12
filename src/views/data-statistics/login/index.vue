@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import toast from '@/components/toast';
+import { copyToClipboard } from '@/hooks/index';
+const VUE_URL = 'wekooo.com';
+
+const login = () => {
+  toast({ message: '你还想登陆? 嘻嘻' });
+};
+</script>
 
 <template>
   <div
@@ -23,8 +31,11 @@
         <div class="text-$secondaryText">
           {{ '💻' + ' ' + $t('data_statistics.login.computer_access') + ': ' }}
         </div>
-        <div class="text-$tertiaryText flex items-center gap-2 ml-4">
-          <span>wekooo.com</span>
+        <div
+          class="text-$tertiaryText flex items-center gap-2 ml-4"
+          @click="copyToClipboard(VUE_URL)"
+        >
+          <span>{{ VUE_URL }}</span>
           <span class="i-ph:copy-simple w-14 h-14"></span>
         </div>
       </div>
@@ -34,7 +45,7 @@
           class="w-168 h-40 bg-#E6F1FF rounded-23 flex-center text-$positive"
         >
           <span class="i-icon-park-outline:computer w-18 h-18"></span>
-          <span class="ml-2 font-500 text-14 lh-20">
+          <span class="ml-2 font-500 text-14 lh-20" @click="login">
             {{ $t('data_statistics.login.button_content') }}
           </span>
         </div>

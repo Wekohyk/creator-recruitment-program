@@ -30,6 +30,12 @@ const navigateToTab = (url: string) => {
       <div class="font-500 text-10 lh-14">{{ item.name }}</div>
     </div>
   </div>
+  <!-- Prevent the icon from not loading in the v-for loop above -->
+  <div class="fixed top-100000 opacity-0">
+    <span class="i-fluent:data-histogram-20-filled"></span>
+    <span class="i-solar:lightbulb-bold"></span>
+    <span class="i-mynaui:user-solid"></span>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>

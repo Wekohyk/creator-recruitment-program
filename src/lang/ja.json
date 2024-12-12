@@ -1,4 +1,6 @@
 {
+  "copySuccess": "コピー成功",
+  "copyFail": "コピー失敗しました、もう一度試してください",
   "tabList": {
     "text_one": "データ統計",
     "text_two": "クリエイター",

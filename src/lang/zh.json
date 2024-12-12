@@ -1,4 +1,6 @@
 {
+  "copySuccess": "复制成功",
+  "copyFail": "复制失败, 请重试",
   "tabList": {
     "text_one": "数据统计",
     "text_two": "创作者",

@@ -1,4 +1,6 @@
 {
+  "copySuccess": "Copy Success",
+  "copyFail": "Copy failed, please try again",
   "tabList": {
     "text_one": "Data Statistics",
     "text_two": "Creator",
