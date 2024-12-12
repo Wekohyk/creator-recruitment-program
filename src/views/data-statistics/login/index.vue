@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import toast from '@/components/toast';
 import { copyToClipboard } from '@/hooks/index';
+import { useRouter } from 'vue-router';
 const VUE_URL = 'wekooo.com';
 
+const router = useRouter();
 const login = () => {
-  toast({ message: '你还想登陆? 嘻嘻' });
+  toast({ message: '你还想登陆? 嘻嘻, 2秒后跳转到主页' });
+  setTimeout(() => {
+    router.push('/data-statistics/home');
+  }, 2000);
 };
 </script>
 
