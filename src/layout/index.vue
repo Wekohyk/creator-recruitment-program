@@ -35,6 +35,8 @@ const navigateToTab = (url: string) => {
     <span class="i-fluent:data-histogram-20-filled"></span>
     <span class="i-solar:lightbulb-bold"></span>
     <span class="i-mynaui:user-solid"></span>
+    <span class="i-bi:sort-up-alt"></span>
+    <span class="i-tabler:flame-filled"></span>
   </div>
 </template>
 

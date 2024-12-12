@@ -13,6 +13,10 @@
       "content": "Please use a computer to create the component",
       "computer_access": "Computer Access",
       "button_content": "Scan to log in and create works"
+    },
+    "home": {
+      "work_updates": "Work Updates",
+      "today": "Today"
     }
   }
 }

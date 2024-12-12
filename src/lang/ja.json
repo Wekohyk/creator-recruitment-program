@@ -13,6 +13,10 @@
       "content": "パソコンでコンポーネントを作成してください",
       "computer_access": "コンピュータでアクセス",
       "button_content": "ログインして作品を作成するためにスキャン"
+    },
+    "home": {
+      "work_updates": "プロジェクトの進捗",
+      "today": "今日"
     }
   }
 }

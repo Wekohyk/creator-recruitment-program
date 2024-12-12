@@ -13,6 +13,10 @@
       "content": "请使用电脑端制作组件",
       "computer_access": "电脑访问",
       "button_content": "扫码登录创作作品"
+    },
+    "home": {
+      "work_updates": "项目动态",
+      "today": "今日"
     }
   }
 }
