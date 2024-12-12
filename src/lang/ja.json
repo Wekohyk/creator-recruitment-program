@@ -1,9 +1,16 @@
 {
+  "tabList": {
+    "text_one": "データ統計",
+    "text_two": "クリエイター",
+    "text_three": "私の"
+  },
   "data_statistics": {
     "index": "データ統計",
     "login": {
       "title": "作品は空です~",
-      "content": "パソコンでコンポーネントを作成してください"
+      "content": "パソコンでコンポーネントを作成してください",
+      "computer_access": "コンピュータでアクセス",
+      "button_content": "ログインして作品を作成するためにスキャン"
     }
   }
 }

@@ -1,9 +1,16 @@
 {
+  "tabList": {
+    "text_one": "Data Statistics",
+    "text_two": "Creator",
+    "text_three": "Mine"
+  },
   "data_statistics": {
     "index": "Data Statistics",
     "login": {
       "title": "The work is empty~",
-      "content": "Please use a computer to create the component"
+      "content": "Please use a computer to create the component",
+      "computer_access": "Computer Access",
+      "button_content": "Scan to log in and create works"
     }
   }
 }

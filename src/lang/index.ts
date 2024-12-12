@@ -65,3 +65,6 @@ export function getI18n() {
 export function getI18nLocale() {
   return i18n.global.locale;
 }
+
+// use vue-i18n in modules
+export const $t = i18n.global.t.bind(i18n.global);

@@ -7,7 +7,8 @@ import PageLayout from '@/components/PageLayout.vue';
     <template #navigationBarCenter>
       <div>{{ $t('data_statistics.index') }}</div>
     </template>
-    <div class="w-100vw h-full p-16">
+
+    <div class="w-100vw h-full">
       <router-view></router-view>
     </div>
   </PageLayout>

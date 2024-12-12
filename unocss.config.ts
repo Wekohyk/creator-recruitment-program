@@ -42,7 +42,16 @@ export default defineConfig({
     [
       /^flex-center$/,
       () => {
-        return `{ display: flex; justify-content: center; align-items: center; }`;
+        return `.flex-center { display: flex; justify-content: center; align-items: center; }`;
+      },
+    ],
+    // 背景模糊
+    [
+      /^bg-blur-(\d+)$/, // 匹配 bg-blur-后面的数字
+      ([, d], { rawSelector }) => {
+        const selector = e(rawSelector);
+        const size = normalizeSize(d); // 规范化大小
+        return `${selector} { backdrop-filter: blur(${size}); }`;
       },
     ],
     // 处理文本溢出并应用省略号
