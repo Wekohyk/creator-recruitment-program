@@ -16,7 +16,12 @@
     },
     "home": {
       "work_updates": "Work Updates",
-      "today": "Today"
+      "today": "Today",
+      "pending_collection": "Pending Collection",
+      "newCreatorPackage": "New Creator Exclusive Resource Package",
+      "my_work": "My Works",
+      "totalWorks": "Total Works Usage",
+      "totalHot": "Total Hot Value"
     }
   }
 }

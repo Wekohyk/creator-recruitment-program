@@ -16,7 +16,12 @@
     },
     "home": {
       "work_updates": "プロジェクトの進捗",
-      "today": "今日"
+      "today": "今日",
+      "pending_collection": "収集待ち",
+      "newCreatorPackage": "新しいクリエイター専用リソースパッケージ",
+      "my_work": "私の作品",
+      "totalWorks": "総作品使用",
+      "totalHot": "総熱度値"
     }
   }
 }

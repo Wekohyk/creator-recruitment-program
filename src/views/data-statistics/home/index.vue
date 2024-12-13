@@ -2,6 +2,7 @@
 import WorkUpdatesBanner from './WorkUpdatesBanner.vue';
 import Card from './Card.vue';
 import NewCreatorBanner from './NewCreatorBanner.vue';
+import CardBanner from './CardBanner.vue';
 import { cardList } from '.';
 </script>
 
@@ -15,6 +16,16 @@ import { cardList } from '.';
     </div>
     <div class="mt-16">
       <NewCreatorBanner />
+    </div>
+
+    <div class="mt-20">
+      <div class="font-600 text-17 lh-17">
+        {{ $t('data_statistics.home.my_work') }}
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <CardBanner></CardBanner>
     </div>
   </div>
 </template>

@@ -16,7 +16,12 @@
     },
     "home": {
       "work_updates": "项目动态",
-      "today": "今日"
+      "today": "今日",
+      "pending_collection": "待领取",
+      "newCreatorPackage": "新人创作者专属资源包",
+      "my_work": "我的作品",
+      "totalWorks": "总作品使用",
+      "totalHot": "总热度值"
     }
   }
 }
