@@ -16,6 +16,8 @@ import 'uno.css';
 import { getI18n } from './lang';
 // App
 import App from './App.vue';
+// import miragejs server
+import '@/mocks/index';
 
 const app = createApp(App);
 

@@ -1,8 +1,18 @@
 <script setup lang="ts">
-defineProps({
+import { computed } from 'vue';
+
+const props = defineProps({
   content: String,
   width: Number,
   height: Number,
+});
+
+const contentValue = computed(() => {
+  return props.content === 'small'
+    ? '小'
+    : props.content === 'medium'
+      ? '中'
+      : '大';
 });
 </script>
 
@@ -14,7 +24,7 @@ defineProps({
       height: `${height}px`,
     }"
   >
-    {{ content }}
+    {{ contentValue }}
   </div>
 </template>
 

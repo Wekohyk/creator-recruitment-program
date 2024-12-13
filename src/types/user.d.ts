@@ -8,3 +8,12 @@ export type CardList = {
   hotValue?: number;
   hotCount?: number;
 };
+
+export type MyWork = {
+  widgetName: string;
+  widgetType: string[];
+  widgetImg: string;
+  useCount: string;
+  hotValue: string;
+  todayHotValue: string;
+};

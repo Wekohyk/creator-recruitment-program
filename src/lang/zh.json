@@ -21,7 +21,13 @@
       "newCreatorPackage": "新人创作者专属资源包",
       "my_work": "我的作品",
       "totalWorks": "总作品使用",
-      "totalHot": "总热度值"
+      "totalHot": "总热度值",
+      "weather": "天气",
+      "x_panel": "X面板",
+      "fan": "风扇",
+      "everyday": "每日一言",
+      "workday_down": "下班倒计时",
+      "usage": "使用量"
     }
   }
 }

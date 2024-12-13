@@ -4,6 +4,16 @@ import Card from './Card.vue';
 import NewCreatorBanner from './NewCreatorBanner.vue';
 import CardBanner from './CardBanner.vue';
 import { cardList } from '.';
+import { onMounted, ref } from 'vue';
+import { getMyWork } from '@/api';
+
+const myWorkList = ref({});
+onMounted(async () => {
+  await getMyWork().then(res => {
+    myWorkList.value = res;
+    console.log('我的作品', myWorkList.value);
+  });
+});
 </script>
 
 <template>
@@ -24,8 +34,12 @@ import { cardList } from '.';
       </div>
     </div>
 
-    <div class="mt-12">
-      <CardBanner></CardBanner>
+    <div class="mt-12 flex flex-col gap-8 adapt-pb-57">
+      <CardBanner
+        v-for="item in myWorkList"
+        :key="item"
+        :widgetList="item"
+      ></CardBanner>
     </div>
   </div>
 </template>

@@ -21,7 +21,13 @@
       "newCreatorPackage": "New Creator Exclusive Resource Package",
       "my_work": "My Works",
       "totalWorks": "Total Works Usage",
-      "totalHot": "Total Hot Value"
+      "totalHot": "Total Hot Value",
+      "weather": "Weather",
+      "x_panel": "X-Panel",
+      "fan": "Fan",
+      "everyday": "Daily Quote",
+      "workday_down": "Workday Countdown",
+      "usage": "Usage"
     }
   }
 }

@@ -24,10 +24,51 @@ export function getI18nLocale() {
 export const lang = computed(() => getI18nLocale().value);
 export const isZh = computed(() => lang.value === 'zh');
 
-// 在此处补充语言环境判断逻辑
-export function formatStrByArea<T>(stdin: Glyi18n<T>) {
-  return stdin[lang.value] || stdin.zh;
+export function formatCount(count: number | string) {
+  count = Number(count);
+  if (!count || isNaN(count)) {
+    count = 0;
+  }
+  if (lang.value === 'en') {
+    const desc = ' use';
+    if (count > 1000) {
+      return Math.round(count / 1000) + 'K' + desc;
+    }
+    return count + desc;
+  }
+  if (lang.value === 'zh') {
+    const desc = '人使用';
+    if (count > 10000) {
+      return (count / 10000).toFixed(1) + '万' + desc;
+    }
+    return count + desc;
+  }
+  if (lang.value === 'jp') {
+    if (count > 10000) {
+      return `利用者数${(count / 10000).toFixed(1)}万人`;
+    }
+    return `利用者数${count}人`;
+  }
+  /**
+   * TODO:JP language
+   */
 }
+
+export function formatStrByArea<T>(stdin: Glyi18n<T>, bak: Languages = 'zh') {
+  return stdin[lang.value] || stdin[bak] || '';
+}
+
+export const realLang = (
+  supportedLanguages: Array<Languages>,
+  lang: Languages,
+) => {
+  if (supportedLanguages.includes(lang)) {
+    return lang;
+  } else {
+    return 'zh';
+  }
+};
+
 interface DateTime {
   time: string;
   date: string;

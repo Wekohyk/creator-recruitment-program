@@ -21,7 +21,13 @@
       "newCreatorPackage": "新しいクリエイター専用リソースパッケージ",
       "my_work": "私の作品",
       "totalWorks": "総作品使用",
-      "totalHot": "総熱度値"
+      "totalHot": "総熱度値",
+      "weather": "天気",
+      "x_panel": "Xパネル",
+      "fan": "風扇",
+      "everyday": "毎日一言",
+      "workday_down": "下業時間",
+      "usage": "使用量"
     }
   }
 }
