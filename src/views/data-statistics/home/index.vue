@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import WorkUpdatesBanner from './WorkUpdatesBanner.vue';
-import Card from './Card.vue';
 import NewCreatorBanner from './NewCreatorBanner.vue';
+import Card from './Card.vue';
 import CardBanner from './CardBanner.vue';
 import { cardList } from '.';
 import { onMounted, ref } from 'vue';

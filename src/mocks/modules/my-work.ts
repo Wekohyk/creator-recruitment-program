@@ -27,13 +27,13 @@ const widgetList = [
     img: '/widget/workday-down-medium.webp',
   },
 ];
-const MOCK_HEADER = 'mock';
 
 // random data generation
 const myWorksRandom = () => {
   const widget = widgetList[Math.floor(Math.random() * widgetList.length)];
   const { name: widgetName, type: widgetType, img: widgetImg } = widget;
   const useCount = String(Math.floor(Math.random() * 1000));
+  const todayUseCount = String(Math.floor(Math.random() * 100));
   const hotValue = String(Math.floor(Math.random() * 10000));
   const todayHotValue = String(
     Math.floor(Math.random() * (3333 - -3333 + 1)) + -3333,
@@ -44,6 +44,7 @@ const myWorksRandom = () => {
     widgetType,
     widgetImg,
     useCount,
+    todayUseCount,
     hotValue,
     todayHotValue,
   };
@@ -62,11 +63,11 @@ createServer({
   },
 
   routes() {
-    this.namespace = MOCK_HEADER;
+    this.namespace = 'mock';
 
     this.get('/my-work', () => {
-      const my_works = Array.from({ length: 10 }, () => myWorksRandom());
-      return my_works;
+      const data = Array.from({ length: 10 }, () => myWorksRandom());
+      return data;
     });
   },
 });

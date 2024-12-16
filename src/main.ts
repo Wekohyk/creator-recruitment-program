@@ -1,8 +1,8 @@
 // 自定义指令
 import backToTop from './directive/back-to-top';
 import { createApp } from 'vue';
-// pinia and pinia-plugin-persistedstate
-import pinia from './store';
+// pinia
+import { createPinia } from 'pinia';
 // vue-router
 import router from './router';
 /**
@@ -17,9 +17,13 @@ import { getI18n } from './lang';
 // App
 import App from './App.vue';
 // import miragejs server
-import '@/mocks/index';
+import '@/mocks';
 
 const app = createApp(App);
 
-app.use(pinia).use(router).directive('back-to-top', backToTop).use(getI18n());
+app
+  .use(createPinia())
+  .use(router)
+  .directive('back-to-top', backToTop)
+  .use(getI18n());
 app.mount('#app');

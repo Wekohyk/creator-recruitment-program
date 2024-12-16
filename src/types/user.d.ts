@@ -15,6 +15,7 @@ export type MyWork = {
   widgetName: string;
   widgetType: WidgetType[];
   widgetImg: string;
+  todayUseCount: string;
   useCount: string;
   hotValue: string;
   todayHotValue: string;
