@@ -9,9 +9,11 @@ export type CardList = {
   hotCount?: number;
 };
 
+export type WidgetType = small | medium | large;
+
 export type MyWork = {
   widgetName: string;
-  widgetType: string[];
+  widgetType: WidgetType[];
   widgetImg: string;
   useCount: string;
   hotValue: string;
