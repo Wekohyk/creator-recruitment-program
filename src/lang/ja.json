@@ -29,5 +29,22 @@
       "workday_down": "下業時間",
       "usage": "使用量"
     }
+  },
+  "popup": {
+    "newcomer_resource_kit": {
+      "title": "作品審査通過!",
+      "content": "新人リソースパッケージ",
+      "limited_time_offer": "限時オファー",
+      "discovery_page": "発見ボックス",
+      "hundreds_millions": "千万人",
+      "dynamic_component": "動的コンポーネント",
+      "industry_first": "業界最初",
+      "creation_tools": "作成ツール",
+      "professional_tools": "専門ツール",
+      "creative_resources": "クリエイティブリソース",
+      "rich_widget_library": "リッチウィジェットライブラリ",
+      "not_claiming_for_now": "一時的に受け取らない",
+      "claim_now": "すぐに受け取る"
+    }
   }
 }

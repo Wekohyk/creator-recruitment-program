@@ -29,5 +29,22 @@
       "workday_down": "Workday Countdown",
       "usage": "Usage"
     }
+  },
+  "popup": {
+    "newcomer_resource_kit": {
+      "title": "Artwork review passed!",
+      "content": "Newcomer Resource Kit",
+      "limited_time_offer": "Limited Time Offer",
+      "discovery_page": "Discovery Page",
+      "hundreds_millions": "Hundreds of Millions",
+      "dynamic_component": "Dynamic Component",
+      "industry_first": "Industry First",
+      "creation_tools": "Creation Tools",
+      "professional_tools": "Professional Tools",
+      "creative_resources": "Creative Resources",
+      "rich_widget_library": "Rich Widget Library",
+      "not_claiming_for_now": "Not Claiming for Now",
+      "claim_now": "Claim Now"
+    }
   }
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import WorkUpdatesBanner from './WorkUpdatesBanner.vue';
 import NewCreatorBanner from './NewCreatorBanner.vue';
+import NewcomerResourceKit from '@/components/popup/NewcomerResourceKit.vue';
 import Card from './Card.vue';
 import CardBanner from './CardBanner.vue';
 import { cardList } from '@/mocks/modules/author';
@@ -8,6 +9,8 @@ import { onMounted, ref } from 'vue';
 import { getAuthor, getMyWork } from '@/api';
 import { AuthorList, MyWork } from '@/types/user';
 
+// 控制弹窗显隐
+const visible = ref(false);
 const myWorkList = ref<MyWork[]>([]);
 const authorList = ref<AuthorList>({
   totalWorksUsage: 0,
@@ -41,7 +44,14 @@ onMounted(async () => {
         :index="index"
       />
     </div>
-    <div class="mt-16">
+    <div
+      class="mt-16"
+      @click="
+        () => {
+          visible = true;
+        }
+      "
+    >
       <NewCreatorBanner />
     </div>
 
@@ -56,9 +66,16 @@ onMounted(async () => {
         v-for="item in myWorkList"
         :key="item.useCount"
         :widgetList="item"
-      ></CardBanner>
+      />
     </div>
   </div>
+
+  <teleport to="body">
+    <NewcomerResourceKit
+      :visible="visible"
+      @update:visible="visible = $event"
+    ></NewcomerResourceKit>
+  </teleport>
 </template>
 
 <style scoped lang="scss"></style>

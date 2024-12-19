@@ -29,5 +29,22 @@
       "workday_down": "下班倒计时",
       "usage": "使用量"
     }
+  },
+  "popup": {
+    "newcomer_resource_kit": {
+      "title": "作品审核通过!",
+      "content": "新人资源包",
+      "limited_time_offer": "限时领取",
+      "discovery_page": "上发现页",
+      "hundreds_millions": "亿级流量",
+      "dynamic_component": "动态组件",
+      "industry_first": "行业首创",
+      "creation_tools": "创作工具",
+      "professional_tools": "专业工具",
+      "creative_resources": "创作资源",
+      "rich_widget_library": "丰富组件库",
+      "not_claiming_for_now": "暂不领取",
+      "claim_now": "立即领取"
+    }
   }
 }
