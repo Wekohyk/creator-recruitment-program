@@ -60,14 +60,7 @@ onMounted(async () => {
         :index="index"
       />
     </div>
-    <div
-      class="mt-16"
-      @click="
-        () => {
-          visible = true;
-        }
-      "
-    >
+    <div class="mt-16" @click="visible = true">
       <NewCreatorBanner />
     </div>
 

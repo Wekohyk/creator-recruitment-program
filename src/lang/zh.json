@@ -48,6 +48,11 @@
       "rich_widget_library": "丰富组件库",
       "not_claiming_for_now": "暂不领取",
       "claim_now": "立即领取"
+    },
+    "dynamic_display": {
+      "index": "全部动态",
+      "system_notification": "系统通知",
+      "title": "你的作品已经设置广告解锁"
     }
   }
 }

@@ -45,6 +45,9 @@
       "rich_widget_library": "Rich Widget Library",
       "not_claiming_for_now": "Not Claiming for Now",
       "claim_now": "Claim Now"
-    }
+    },
+    "dynamic_display": "All Dynamic",
+    "system_notification": "System Notification",
+    "title": "Your work has been set to unlock ads"
   }
 }

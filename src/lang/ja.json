@@ -45,6 +45,9 @@
       "rich_widget_library": "リッチウィジェットライブラリ",
       "not_claiming_for_now": "一時的に受け取らない",
       "claim_now": "すぐに受け取る"
-    }
+    },
+    "dynamic_display": "すべての動的",
+    "system_notification": "システム通知",
+    "title": "あなたの作品は広告解除が設定されました"
   }
 }
