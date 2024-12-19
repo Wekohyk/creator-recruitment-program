@@ -15,3 +15,26 @@ export const copyToClipboard = async (text: string): Promise<void> => {
     toast({ message: $t('copyFail') });
   }
 };
+
+/**
+ * Check if a number is positive or negative.
+ *
+ * @param number The number to be checked
+ * @returns A boolean indicating whether the number is positive or negative
+ * @throws An error if the number is null, undefined, or not a number
+ */
+export const isPositiveOrNegative = (number: number | string): boolean => {
+  if (number === null || number === undefined) {
+    throw new Error('number is null or undefined');
+  }
+  const num = Number(number);
+  if (isNaN(num)) {
+    throw new Error('number is not a number');
+  }
+  // Check if the number is positive
+  if (num > 0) {
+    return true;
+  }
+  // The number is negative
+  return false;
+};

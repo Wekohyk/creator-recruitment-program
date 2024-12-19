@@ -2,6 +2,7 @@
 import WidgetSize from '@/components/WidgetSize.vue';
 import { MyWork } from '@/types/user';
 import { computed } from 'vue';
+import { isPositiveOrNegative } from '@/hooks/index';
 
 const props = defineProps({
   widgetList: Object as () => MyWork,
@@ -81,8 +82,19 @@ const widgetImgSize = computed(() => {
           <span class="text-$tertiaryText">
             {{ $t('data_statistics.home.today') }}
           </span>
-          <span class="text-$red font-500">
-            {{ props.widgetList?.todayHotValue }}
+          <span
+            :class="[
+              'font-500',
+              isPositiveOrNegative(props.widgetList!.todayHotValue)
+                ? 'text-$red'
+                : 'text-$tertiaryText',
+            ]"
+          >
+            {{
+              isPositiveOrNegative(props.widgetList!.todayHotValue)
+                ? '+' + props.widgetList?.todayHotValue
+                : '' + props.widgetList?.todayHotValue
+            }}
           </span>
         </div>
       </div>

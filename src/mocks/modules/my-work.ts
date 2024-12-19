@@ -1,6 +1,4 @@
-import { createServer, Model } from 'miragejs';
-
-const widgetList = [
+export const widgetList = [
   {
     name: '天气',
     type: ['medium', 'large'],
@@ -29,15 +27,13 @@ const widgetList = [
 ];
 
 // random data generation
-const myWorksRandom = () => {
+export const myWorksRandom = () => {
   const widget = widgetList[Math.floor(Math.random() * widgetList.length)];
   const { name: widgetName, type: widgetType, img: widgetImg } = widget;
   const useCount = String(Math.floor(Math.random() * 1000));
   const todayUseCount = String(Math.floor(Math.random() * 100));
   const hotValue = String(Math.floor(Math.random() * 10000));
-  const todayHotValue = String(
-    Math.floor(Math.random() * (3333 - -3333 + 1)) + -3333,
-  );
+  const todayHotValue = String(Math.floor(Math.random() * 3333));
 
   return {
     widgetName,
@@ -49,25 +45,3 @@ const myWorksRandom = () => {
     todayHotValue,
   };
 };
-
-createServer({
-  models: {
-    my_works: Model,
-  },
-
-  seeds(server) {
-    // Create 10 records with individually generated random data
-    for (let i = 0; i < 10; i++) {
-      server.create('my_work', myWorksRandom() as any);
-    }
-  },
-
-  routes() {
-    this.namespace = 'mock';
-
-    this.get('/my-work', () => {
-      const data = Array.from({ length: 10 }, () => myWorksRandom());
-      return data;
-    });
-  },
-});

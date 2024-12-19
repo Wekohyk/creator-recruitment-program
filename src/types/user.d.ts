@@ -3,10 +3,13 @@ export type CardList = {
   icon: string;
   iconColor: string;
   title: string;
-  useCountPeople?: number;
-  count?: number;
-  hotValue?: number;
-  hotCount?: number;
+};
+
+export type AuthorList = {
+  totalWorksUsage: number;
+  totalHotValue: number;
+  everyTotalWorks: number;
+  everyHotValue: number;
 };
 
 export type WidgetType = small | medium | large;
