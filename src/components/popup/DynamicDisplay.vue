@@ -70,6 +70,7 @@ const emit = defineEmits(['update:visible']);
         </div>
 
         <!-- 通知列表 -->
+        <div class="w-full h-64"></div>
       </div>
     </div>
   </transition>
