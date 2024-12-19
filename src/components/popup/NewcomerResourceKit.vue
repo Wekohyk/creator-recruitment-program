@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { $t } from '@/lang';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   visible: {
@@ -32,6 +33,8 @@ const svgList = [
     content: $t('popup.newcomer_resource_kit.rich_widget_library'),
   },
 ];
+
+const router = useRouter();
 </script>
 
 <template>
@@ -91,6 +94,7 @@ const svgList = [
               background: `linear-gradient(270deg, #FF253A 0.18%, #FF4470 76.55%)`,
               'box-shadow': `0px 0px 5.3px 0px #FFFFFF inset`,
             }"
+            @click="() => router.push('/growth-center')"
           >
             {{ $t('popup.newcomer_resource_kit.claim_now') }}
           </div>

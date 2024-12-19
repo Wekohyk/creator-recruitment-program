@@ -15,4 +15,10 @@ export const routes = [
       },
     ],
   },
+  // 成长中心
+  {
+    path: '/growth-center',
+    component: () => import('@/views/growth-center/index.vue'),
+    meta: { title: 'growth-center' },
+  },
 ];
