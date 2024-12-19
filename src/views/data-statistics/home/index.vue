@@ -6,26 +6,39 @@ import Card from './Card.vue';
 import CardBanner from './CardBanner.vue';
 import { cardList } from '@/mocks/modules/author';
 import { onMounted, ref } from 'vue';
-import { getAuthor, getMyWork } from '@/api';
+import { getMyWork } from '@/api';
 import { AuthorList, MyWork } from '@/types/user';
 
 // 控制弹窗显隐
 const visible = ref(false);
+// 我的作品列表
 const myWorkList = ref<MyWork[]>([]);
+// 总使用
 const authorList = ref<AuthorList>({
   totalWorksUsage: 0,
   totalHotValue: 0,
   everyTotalWorks: 0,
   everyHotValue: 0,
 });
+// 通知处理
+const totalNoticeNumber = ref<number>(0);
+const userAvatarList = ref<string[]>([]);
 onMounted(async () => {
+  // 处理我的作品
   await getMyWork().then(res => {
     myWorkList.value = res;
     console.log('我的作品', myWorkList.value);
-  });
-  await getAuthor().then(res => {
-    authorList.value = res;
-    console.log('作者', authorList.value);
+    res.forEach((item: MyWork) => {
+      authorList.value.totalHotValue += Number(item.todayHotValue);
+      authorList.value.totalWorksUsage += Number(item.useCount);
+      authorList.value.everyTotalWorks += Number(item.todayUseCount);
+      authorList.value.everyHotValue += Number(item.todayHotValue);
+      // 处理总通知
+      item.notice.forEach(element => {
+        totalNoticeNumber.value += element.widgetNotice;
+        userAvatarList.value.push(element.avatarImgRandom);
+      });
+    });
   });
 });
 </script>
@@ -33,7 +46,10 @@ onMounted(async () => {
 <template>
   <div class="w-100vw h-full bg-$secondaryBackground p-16">
     <div>
-      <WorkUpdatesBanner />
+      <WorkUpdatesBanner
+        :totalNoticeNumber="totalNoticeNumber"
+        :user-avatar="userAvatarList"
+      />
     </div>
     <div class="mt-16 grid grid-cols-2 gap-16">
       <Card

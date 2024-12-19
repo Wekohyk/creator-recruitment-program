@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps({
+  totalNoticeNumber: Number,
+  userAvatar: Array,
+});
+</script>
 
 <template>
   <div
@@ -14,8 +19,8 @@
     <div class="flex gap-6 items-center">
       <div class="flex">
         <div
-          v-for="(item, index) in 3"
-          :key="item"
+          v-for="(item, index) in props.userAvatar?.slice(0, 3)"
+          :key="index"
           :class="[
             'w-30 h-30 rounded-50% bg-$secondaryBackground bg-cover bg-center transform',
             {
@@ -24,7 +29,7 @@
             },
           ]"
           :style="{
-            backgroundImage: `url(/data-statistics/avatar${index}.webp)`,
+            backgroundImage: `url(${item})`,
           }"
         ></div>
       </div>
@@ -33,8 +38,9 @@
 
     <div
       class="py-1 px-4 bg-#FF3B30 text-#FFF text-10 lh-14 rounded-8 absolute -top-6 -right-6 flex items-center justify-center"
+      v-if="props.totalNoticeNumber"
     >
-      999+
+      {{ props.totalNoticeNumber > 999 ? '999+' : props.totalNoticeNumber }}
     </div>
   </div>
 </template>

@@ -2,17 +2,34 @@ import request from '@/utils/request';
 import { MyWork } from '@/types/user';
 
 /**
- * 获取我的作品
- * @returns 作品列表
+ * Get the works of the current user
+ * @returns The works of the current user
  */
 export const getMyWork = async (): Promise<MyWork[]> => {
-  return (await request.get('/my-work')).data;
+  // Get the works of the current user from the server
+  const response = await request.get('/my-work');
+  // Return the works
+  return response.data;
 };
 
 /**
- * 获取作者信息
- * @returns 作者信息
+ * Get the author information
+ * @returns The author information
  */
 export const getAuthor = async (): Promise<any> => {
-  return (await request.get('/author')).data;
+  // Get the author information from the server
+  const response = await request.get('/author');
+  // Return the author information
+  return response.data;
+};
+
+/**
+ * Get the notice list
+ * @returns The notice list
+ */
+export const getNotice = async (): Promise<any> => {
+  // Get the notice list from the server
+  const response = await request.get('/notice');
+  // Return the notice list
+  return response.data;
 };

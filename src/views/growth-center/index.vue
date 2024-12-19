@@ -3,7 +3,7 @@ import PageLayout from '@/components/PageLayout.vue';
 </script>
 
 <template>
-  <PageLayout background="var(--secondaryBackground)" hideBack>
+  <PageLayout background="var(--secondaryBackground)">
     <template #navigationBarCenter>
       <div>{{ $t('growth_center.index') }}</div>
     </template>

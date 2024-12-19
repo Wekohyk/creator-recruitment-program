@@ -22,4 +22,14 @@ export type MyWork = {
   useCount: string;
   hotValue: string;
   todayHotValue: string;
+  notice: NoticeList[];
+};
+
+export type NoticeList = {
+  avatarImgRandom: string;
+  widgetNotice: number;
+  avatarNameEn: string;
+  widgetStatus: string;
+  svgColor: string;
+  hotValue: string;
 };

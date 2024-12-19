@@ -38,3 +38,15 @@ export const isPositiveOrNegative = (number: number | string): boolean => {
   // The number is negative
   return false;
 };
+
+/**
+ * Get a random number between min and max.
+ *
+ * @param min The minimum number
+ * @param max The maximum number
+ * @returns A random number between min and max
+ */
+export const getRandomNumber = (min: number, max: number): number => {
+  // Generate a random number between min and max
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
