@@ -18,7 +18,6 @@ import { getI18n } from './lang';
 import App from './App.vue';
 // import miragejs server
 import '@/mocks';
-import vClickOutside from 'v-click-outside';
 
 const app = createApp(App);
 
@@ -26,6 +25,5 @@ app
   .use(createPinia())
   .use(router)
   .directive('back-to-top', backToTop)
-  .use(getI18n())
-  .use(vClickOutside);
+  .use(getI18n());
 app.mount('#app');
