@@ -1,6 +1,13 @@
 {
   "copySuccess": "Copy Success",
   "copyFail": "Copy failed, please try again",
+  "widget": {
+    "weather": "Weather",
+    "x_panel": "X Panel",
+    "fan": "Fan",
+    "everyday": "Daily Quote",
+    "workday_down": "Countdown to End of Work"
+  },
   "tabList": {
     "text_one": "Data Statistics",
     "text_two": "Creator",
@@ -22,11 +29,6 @@
       "my_work": "My Works",
       "totalWorks": "Total Works Usage",
       "totalHot": "Total Hot Value",
-      "weather": "Weather",
-      "x_panel": "X-Panel",
-      "fan": "Fan",
-      "everyday": "Daily Quote",
-      "workday_down": "Workday Countdown",
       "usage": "Usage"
     }
   },

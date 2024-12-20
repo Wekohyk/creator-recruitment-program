@@ -2,6 +2,7 @@ import { createServer, Model } from 'miragejs';
 import { myWorksRandom } from './modules/my-work';
 import { authorMirage } from './modules/author';
 import { noticeRandom } from './modules/notice';
+import { reviewRandom } from './modules/review-information';
 import { getRandomNumber } from '@/hooks';
 
 // create mock server
@@ -45,6 +46,13 @@ createServer({
     this.get('/notice', () => {
       const data = Array.from({ length: getRandomNumber(0, 20) }, () =>
         noticeRandom(),
+      );
+      return data;
+    });
+
+    this.get('/review-information', () => {
+      const data = Array.from({ length: getRandomNumber(0, 15) }, () =>
+        reviewRandom(),
       );
       return data;
     });
