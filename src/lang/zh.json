@@ -52,7 +52,17 @@
     "dynamic_display": {
       "index": "全部动态",
       "system_notification": "系统通知",
-      "title": "你的作品已经设置广告解锁"
+      "title": "你的作品已经设置广告解锁",
+      "share": "分享了「火花」",
+      "add": "添加了「火花」",
+      "like": "点赞了「火花」",
+      "use": "使用了「火花」",
+      "browse": "浏览了「火花」",
+      "passShare": "通过分享使用作品",
+      "passLook": "通过看广告助力",
+      "passFlame": "使用火苗解锁了火花",
+      "passRecharge": "获得首充奖励",
+      "refundFlame": "退款了火花"
     }
   }
 }

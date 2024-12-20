@@ -13,7 +13,7 @@ const navigateToTab = (url: string) => {
   <router-view></router-view>
   <!-- 下方 tab 栏 -->
   <div
-    class="fixed bottom-0 left-0 z-999 w-100vw adapt-h-49 px-38 pt-12 bg-#FFFFFF/80 bg-blur-54 flex justify-between"
+    class="fixed bottom-0 left-0 z-99 w-100vw adapt-h-49 px-38 pt-12 bg-#FFFFFF/80 bg-blur-54 flex justify-between"
   >
     <div
       :class="[
@@ -37,6 +37,16 @@ const navigateToTab = (url: string) => {
     <span class="i-mynaui:user-solid"></span>
     <span class="i-bi:sort-up-alt"></span>
     <span class="i-tabler:flame-filled"></span>
+    <!-- popup -->
+    <span class="i-icon-park-solid:share-two"></span>
+    <span class="i-basil:add-solid"></span>
+    <span class="i-wpf:like"></span>
+    <span class="i-tdesign:user-arrow-down"></span>
+    <span class="i-tdesign:browse"></span>
+    <span class="i-mdi:user-add"></span>
+    <span class="i-uil:unlock"></span>
+    <span class="i-healthicons:money-bag"></span>
+    <span class="i-mingcute:card-refund-fill"></span>
   </div>
 </template>
 

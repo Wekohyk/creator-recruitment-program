@@ -28,8 +28,16 @@ export type MyWork = {
 export type NoticeList = {
   avatarImgRandom: string;
   widgetNotice: number;
-  avatarNameEn: string;
+  avatarName: string;
   widgetStatus: string;
   svgColor: string;
   hotValue: string;
+  hotContent: string;
+  svgImg: string;
+  widgetData?: WidgetData;
+};
+
+export type WidgetData = {
+  widgetImg: string;
+  widgetType: WidgetType[];
 };

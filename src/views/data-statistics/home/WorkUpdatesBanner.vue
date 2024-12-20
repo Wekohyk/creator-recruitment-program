@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MyWork } from '@/types/user';
+import { MyWork, NoticeList } from '@/types/user';
 import DynamicDisplay from '@/components/popup/DynamicDisplay.vue';
 import Mask from '@/components/popup/Mask.vue';
 import { ref } from 'vue';
@@ -10,13 +10,28 @@ const props = defineProps({
   masterList: Array as () => MyWork[],
 });
 
+const allNoticeList = ref<NoticeList[]>();
+
+const openDynamicDisplayPopup = () => {
+  allNoticeList.value = [];
+  props.masterList?.forEach(item => {
+    item.notice.forEach(notice => {
+      allNoticeList.value?.push({
+        ...notice,
+        widgetData: { widgetImg: item.widgetImg, widgetType: item.widgetType },
+      });
+    });
+  });
+  visible.value = true;
+};
+
 const visible = ref(false);
 </script>
 
 <template>
   <div
     class="w-full pl-16 pr-8 py-7 bg-$cardBackground rounded-16 flex items-center justify-between relative"
-    @click="visible = true"
+    @click="openDynamicDisplayPopup"
   >
     <div class="flex items-center gap-6">
       <span class="i-flowbite:bullhorn-solid w-20 h-20 text-#FF9500"></span>
@@ -58,6 +73,7 @@ const visible = ref(false);
       :visible="visible"
       :totalNoticeNumber="totalNoticeNumber"
       @update:visible="visible = $event"
+      :allNoticeList="allNoticeList"
       allDynamic
     ></DynamicDisplay>
     <Mask :visible="visible" @update:visible="visible = $event"></Mask>

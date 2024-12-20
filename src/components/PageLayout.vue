@@ -82,7 +82,7 @@ defineExpose({
   >
     <!-- backdrop-filter backdrop-blur-2 -->
     <header
-      class="top-0 w-full flex-shrink-0 adapt-pt-0 z-999"
+      class="top-0 w-full flex-shrink-0 adapt-pt-0 z-50"
       :class="{
         'bg-transparent': transparentNavigationBar,
         '!fixed left-0': floatHeader,

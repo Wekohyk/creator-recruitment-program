@@ -47,7 +47,7 @@ export default {
   transform: translate(-50%);
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-  z-index: 9999;
+  z-index: 99999999999;
   transition: opacity 0.3s linear;
   // 闪屏
   -webkit-transform-style: preserve-3d;

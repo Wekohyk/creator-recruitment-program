@@ -46,8 +46,20 @@
       "not_claiming_for_now": "一時的に受け取らない",
       "claim_now": "すぐに受け取る"
     },
-    "dynamic_display": "すべての動的",
-    "system_notification": "システム通知",
-    "title": "あなたの作品は広告解除が設定されました"
+    "dynamic_display": {
+      "index": "全動態",
+      "system_notification": "システムのお知らせ",
+      "title": "あなたの作品が広告解除に設定されました",
+      "share": "「火花」を共有しました",
+      "add": "「火花」を追加しました",
+      "like": "「火花」をいいねしました",
+      "use": "「火花」を使用しました",
+      "browse": "「火花」を閲覧しました",
+      "passShare": "作品を共有して使用",
+      "passLook": "広告を見て助力",
+      "passFlame": "火苗で火花を解除",
+      "passRecharge": "初回充電の報酬を受け取りました",
+      "refundFlame": "火花を払い戻しました"
+    }
   }
 }

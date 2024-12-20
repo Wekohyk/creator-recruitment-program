@@ -46,12 +46,16 @@ const router = useRouter();
   >
     <div
       v-if="props.visible"
-      class="fixed top-0 left-0 z-999 w-100vw h-100vh bg-#000000/60 duration-300 transition-all ease-in-out flex-center flex-col"
+      class="fixed top-0 left-0 z-99 w-100vw h-100vh bg-#000000/60 duration-300 transition-all ease-in-out flex-center flex-col"
+      @click="emit('update:visible', false)"
     >
       <div class="font-600 text-20 lh-28 text-#FFF6E4">
         {{ $t('popup.newcomer_resource_kit.title') }}
       </div>
-      <div class="mt-19 w-343 h-390 bg-#FFF rounded-16 flex-center flex-col">
+      <div
+        class="mt-19 w-343 h-390 bg-#FFF rounded-16 flex-center flex-col"
+        @click.stop
+      >
         <div class="text-20 lh-28 font-600">
           {{ $t('popup.newcomer_resource_kit.content') }}
         </div>

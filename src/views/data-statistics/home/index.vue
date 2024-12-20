@@ -49,6 +49,7 @@ onMounted(async () => {
       <WorkUpdatesBanner
         :totalNoticeNumber="totalNoticeNumber"
         :user-avatar="userAvatarList"
+        :masterList="myWorkList"
       />
     </div>
     <div class="mt-16 grid grid-cols-2 gap-16">

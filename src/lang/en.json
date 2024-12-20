@@ -46,8 +46,20 @@
       "not_claiming_for_now": "Not Claiming for Now",
       "claim_now": "Claim Now"
     },
-    "dynamic_display": "All Dynamic",
-    "system_notification": "System Notification",
-    "title": "Your work has been set to unlock ads"
+    "dynamic_display": {
+      "index": "All Dynamics",
+      "system_notification": "System Notification",
+      "title": "Your work has been set to unlock ads",
+      "share": "Shared the Flame",
+      "add": "Added the Flame",
+      "like": "Liked the Flame",
+      "use": "Used the Flame",
+      "browse": "Viewed the Flame",
+      "passShare": "Passed through sharing to use the work",
+      "passLook": "Passed through watching ads to help",
+      "passFlame": "Used the Flame to unlock the Flame",
+      "passRecharge": "Received the first recharge reward",
+      "refundFlame": "Refunded the Flame"
+    }
   }
 }
