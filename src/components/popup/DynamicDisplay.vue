@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NoticeList } from '@/types/user';
-import { watch } from 'vue';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   visible: {
@@ -23,12 +23,11 @@ const props = defineProps({
 
 const emit = defineEmits(['update:visible']);
 
-watch(
-  () => props.visible,
-  () => {
-    console.log('asdiosajfaosidjsaoidjasoidjasoidjsaoid', props.allNoticeList);
-  },
-);
+const router = useRouter();
+
+const linkSystemNotification = () => {
+  router.push('/system-notification');
+};
 </script>
 
 <template>
@@ -62,7 +61,7 @@ watch(
           <div
             v-if="props.allDynamic"
             class="w-full h-60 bg-$primaryDivider rounded-12 p-10 flex items-center justify-between"
-            @click="console.log(123)"
+            @click="linkSystemNotification"
           >
             <div class="flex items-center">
               <div class="w-40 h-40 rounded-50% bg-#FF8A00 flex-center">

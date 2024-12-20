@@ -30,7 +30,7 @@ const visible = ref(false);
 
 <template>
   <div
-    class="w-full pl-16 pr-8 py-7 bg-$cardBackground rounded-16 flex items-center justify-between relative"
+    class="w-full h-44 pl-16 pr-8 py-7 bg-$cardBackground rounded-16 flex items-center justify-between relative"
     @click="openDynamicDisplayPopup"
   >
     <div class="flex items-center gap-6">

@@ -15,7 +15,7 @@
       "button_content": "扫码登录创作作品"
     },
     "home": {
-      "work_updates": "项目动态",
+      "work_updates": "作品动态",
       "today": "今日",
       "pending_collection": "待领取",
       "newCreatorPackage": "新人创作者专属资源包",
@@ -64,5 +64,8 @@
       "passRecharge": "获得首充奖励",
       "refundFlame": "退款了火花"
     }
+  },
+  "system_notification": {
+    "index": "系统通知"
   }
 }

@@ -21,4 +21,10 @@ export const routes = [
     component: () => import('@/views/growth-center/index.vue'),
     meta: { title: 'growth-center' },
   },
+  // 系统通知
+  {
+    path: '/system-notification',
+    component: () => import('@/views/system-notification/index.vue'),
+    meta: { title: 'system-notification' },
+  },
 ];
