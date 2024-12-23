@@ -6,4 +6,5 @@ export type ReviewList = {
   reviewContent: string;
   reviewSvg: string;
   reviewColor: string;
+  widgetId: number;
 };

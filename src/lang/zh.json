@@ -1,6 +1,7 @@
 {
   "copySuccess": "复制成功",
   "copyFail": "复制失败, 请重试",
+  "openContent": "在TopWidgets⁺中打开",
   "widget": {
     "weather": "天气",
     "x_panel": "X面板",
@@ -35,6 +36,10 @@
   "growth_center": {
     "index": "成长中心"
   },
+  "system_notification": {
+    "index": "系统通知",
+    "details": "详情"
+  },
   "popup": {
     "newcomer_resource_kit": {
       "title": "作品审核通过!",
@@ -65,9 +70,9 @@
       "passFlame": "使用火苗解锁了火花",
       "passRecharge": "获得首充奖励",
       "refundFlame": "退款了火花"
+    },
+    "widget_publish": {
+      "index": "组件详情"
     }
-  },
-  "system_notification": {
-    "index": "系统通知"
   }
 }

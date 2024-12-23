@@ -1,6 +1,7 @@
 {
   "copySuccess": "Copy Success",
   "copyFail": "Copy failed, please try again",
+  "openContent": "Open in TopWidgets⁺",
   "widget": {
     "weather": "Weather",
     "x_panel": "X Panel",
@@ -31,6 +32,13 @@
       "totalHot": "Total Hot Value",
       "usage": "Usage"
     }
+  },
+  "growth_center": {
+    "index": "Growth Center"
+  },
+  "system_notification": {
+    "index": "System Notification",
+    "details": "Details"
   },
   "popup": {
     "newcomer_resource_kit": {

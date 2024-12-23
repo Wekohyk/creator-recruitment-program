@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { getReview } from '@/api';
 import PageLayout from '@/components/PageLayout.vue';
+import Mask from '@/components/popup/Mask.vue';
+import widgetPublish from '@/components/popup/widgetPublish.vue';
 import { ReviewList } from '@/types/review';
 import { onMounted, ref } from 'vue';
 
@@ -11,6 +13,18 @@ onMounted(async () => {
     console.log(reviewList.value);
   });
 });
+
+const visible = ref(false);
+const clickProcess = (item: ReviewList) => {
+  console.log('item', item);
+  if (item.reviewStatus === 'publish') {
+    console.log('作品已发布');
+    visible.value = true;
+  }
+  if (item.reviewStatus === 'refuse') {
+    console.log('作品已拒绝');
+  }
+};
 </script>
 
 <template>
@@ -24,6 +38,7 @@ onMounted(async () => {
         class="h-68 px-12 bg-#FFF flex items-center justify-between rounded-12 px-10"
         v-for="item in reviewList"
         :key="item.reviewSvg"
+        @click="clickProcess(item)"
       >
         <div class="flex items-center">
           <div class="w-44 h-44 rounded-6 flex-center bg-$tertiaryBackground">
@@ -60,7 +75,7 @@ onMounted(async () => {
 
         <div class="flex items-center gap-1.5 text-$quaternaryText">
           <div class="text-13 lh-13" v-if="item.reviewStatus === 'refuse'">
-            详情
+            {{ $t('system_notification.details') }}
           </div>
           <span
             v-if="
@@ -69,6 +84,10 @@ onMounted(async () => {
             class="i-uiw:right w-16 h-14"
           ></span>
         </div>
+
+        <Mask :visible="visible" @update:visible="visible = $event">
+          <widgetPublish :widgetList="item"></widgetPublish>
+        </Mask>
       </div>
     </div>
   </PageLayout>

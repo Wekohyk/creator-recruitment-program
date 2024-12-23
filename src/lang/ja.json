@@ -1,6 +1,7 @@
 {
   "copySuccess": "コピー成功",
   "copyFail": "コピー失敗しました、もう一度試してください",
+  "openContent": "TopWidgets⁺で開く",
   "widget": {
     "Weather": "天気",
     "X_panel": "Xパネル",
@@ -31,6 +32,13 @@
       "totalHot": "総熱度値",
       "usage": "使用量"
     }
+  },
+  "growth_center": {
+    "index": "成長センター"
+  },
+  "system_notification": {
+    "index": "システムのお知らせ",
+    "details": "詳細"
   },
   "popup": {
     "newcomer_resource_kit": {

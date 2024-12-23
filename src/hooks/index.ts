@@ -78,3 +78,7 @@ export const compareWidgetSize = (
     rounded,
   };
 };
+
+export const openTopWidget = () => {
+  console.log('openTopWidget');
+};

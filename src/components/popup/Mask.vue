@@ -8,6 +8,8 @@ const props = defineProps({
     masterList: Array as () => MyWork[],
   },
 });
+
+const emit = defineEmits(['update:visible']);
 </script>
 
 <template>
@@ -20,7 +22,10 @@ const props = defineProps({
     <div
       v-if="props.visible"
       class="fixed top-0 left-0 z-98 w-100vw h-100vh bg-#000000/50 duration-300 transition-all ease-in-out pt-114px"
-    ></div>
+      @click="emit('update:visible', false)"
+    >
+      <slot></slot>
+    </div>
   </transition>
 </template>
 
