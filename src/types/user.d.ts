@@ -12,7 +12,7 @@ export type AuthorList = {
   everyHotValue: number;
 };
 
-export type WidgetType = small | medium | large;
+export type WidgetType = 'small' | 'medium' | 'large';
 
 export type MyWork = {
   widgetName: string;

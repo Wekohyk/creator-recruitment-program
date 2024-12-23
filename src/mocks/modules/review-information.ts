@@ -48,8 +48,8 @@ export const reviewRandom = () => {
   const reviewContent = reviewContentMap[reviewStatus];
   // 作品审核符号
   const reviewSvgMap = {
-    publish: 'fluent-mdl2:completed-solid',
-    join: 'uiw:time',
+    publish: 'ix:success-filled',
+    join: 'ion:time',
     refuse: 'ix:error-filled',
   };
   const reviewSvg = reviewSvgMap[reviewStatus];

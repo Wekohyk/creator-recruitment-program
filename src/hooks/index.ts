@@ -1,5 +1,6 @@
 import toast from '@/components/toast';
 import { $t } from '@/lang';
+import { WidgetType } from '@/types/user';
 
 /**
  * Copy the given text to the clipboard.
@@ -49,4 +50,31 @@ export const isPositiveOrNegative = (number: number | string): boolean => {
 export const getRandomNumber = (min: number, max: number): number => {
   // Generate a random number between min and max
   return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+export const compareWidgetSize = (
+  widgetType: WidgetType,
+  width: string | number,
+  height: string | number,
+  rounded: string | number,
+) => {
+  if (widgetType === 'small') {
+    return {
+      width,
+      height,
+      rounded,
+    };
+  }
+  if (widgetType === 'medium') {
+    return {
+      width,
+      height,
+      rounded,
+    };
+  }
+  return {
+    width,
+    height,
+    rounded,
+  };
 };
