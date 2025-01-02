@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAttrs, ref } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 interface Props {
@@ -15,9 +15,10 @@ interface Props {
   goBackWidth?: string;
   goBackHeight?: string;
   backBtnDeepShallowMode?: boolean;
+  useBack?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   scrollable: true,
   goBackHeight: '18px',
   goBackWidth: '18px',
@@ -49,9 +50,8 @@ interface Slots {
 defineSlots<Slots>();
 
 const router = useRouter();
-const attrs = useAttrs();
 const back = () => {
-  if (Reflect.has(attrs, 'onBack')) {
+  if (props.useBack) {
     emit('back');
   } else {
     // 利用vue-router返回上一页

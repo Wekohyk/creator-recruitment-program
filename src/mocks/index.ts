@@ -4,6 +4,7 @@ import { authorMirage } from './modules/author';
 import { noticeRandom } from './modules/notice';
 import { reviewRandom } from './modules/review-information';
 import { getRandomNumber } from '@/hooks';
+import { reviewFeedback } from './modules/review-feedback';
 
 // create mock server
 createServer({
@@ -55,8 +56,12 @@ createServer({
         { length: getRandomNumber(0, 15) },
         (_, index) => {
           const res = reviewRandom();
+          const rejectData = reviewFeedback();
           res.widgetId = 0 + index;
-          return res;
+          return {
+            ...res,
+            rejectData,
+          };
         },
       );
       return data;

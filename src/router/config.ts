@@ -27,4 +27,10 @@ export const routes = [
     component: () => import('@/views/system-notification/index.vue'),
     meta: { title: 'system-notification' },
   },
+  // 审核反馈
+  {
+    path: '/review-feedback',
+    component: () => import('@/views/review-feedback/index.vue'),
+    meta: { title: 'review-feedback' },
+  },
 ];

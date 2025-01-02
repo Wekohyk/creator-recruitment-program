@@ -73,6 +73,20 @@
     },
     "widget_publish": {
       "index": "组件详情"
+    },
+    "review_feedback": {
+      "index": "审核反馈",
+      "respected_designer": "尊敬的设计师",
+      "unsuccessful_review": "很遗憾，您的组件审核未通过。",
+      "component_name": "组件名称: ",
+      "submission_date": "提交日期: ",
+      "review_unsuccessful_reason": "审核未通过原因: ",
+      "review_unsuccessful_content": "待修改的内容:",
+      "review_img_content": "图片内容:",
+      "text1": "更多内容请您查看我们平台对于组件的",
+      "text2": "《制作规范》",
+      "text3": "，请在后续组件制作过程中，严格按照此标准，以便快速通过审核，在我们平台上看到您的精美组件。",
+      "text4": "如果您有任何疑问或需要更多指导，请随时与我们联系。我们愿意为您提供协助和支持，帮助您在小组件设计中取得更好的成果。感谢您的理解与合作。"
     }
   }
 }

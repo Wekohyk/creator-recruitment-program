@@ -7,4 +7,11 @@ export type ReviewList = {
   reviewSvg: string;
   reviewColor: string;
   widgetId: number;
+  rejectData?: ReviewFeedback;
+};
+
+export type ReviewFeedback = {
+  submitTime: string;
+  rejectReason: string[];
+  rejectImg: string;
 };

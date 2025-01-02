@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { MyWork } from '@/types/user';
-
 const props = defineProps({
   visible: {
     type: Boolean,
     default: false,
-    masterList: Array as () => MyWork[],
   },
 });
 
