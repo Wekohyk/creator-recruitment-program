@@ -34,7 +34,14 @@
     }
   },
   "growth_center": {
-    "index": "成长中心"
+    "index": "成长中心",
+    "hot_value": "热度值",
+    "level_1": "入门创作者",
+    "level_2": "见习创作者",
+    "level_3": "新锐创作者",
+    "level_4": "资深创作者",
+    "level_5": "精英创作者",
+    "level_6": "知名创作者"
   },
   "system_notification": {
     "index": "系统通知",
