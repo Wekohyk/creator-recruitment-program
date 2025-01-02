@@ -61,7 +61,7 @@ export const reviewRandom = () => {
   };
   const reviewColor = reviewColorMap[reviewStatus];
 
-  const widgetId = Math.floor(Math.random() * 44 + Math.random() * 444);
+  const widgetId = 0;
 
   return {
     widgetName,

@@ -51,8 +51,13 @@ createServer({
     });
 
     this.get('/review-information', () => {
-      const data = Array.from({ length: getRandomNumber(0, 15) }, () =>
-        reviewRandom(),
+      const data = Array.from(
+        { length: getRandomNumber(0, 15) },
+        (_, index) => {
+          const res = reviewRandom();
+          res.widgetId = 0 + index;
+          return res;
+        },
       );
       return data;
     });

@@ -27,7 +27,6 @@ onMounted(async () => {
   // 处理我的作品
   await getMyWork().then(res => {
     myWorkList.value = res;
-    console.log('我的作品', myWorkList.value);
     res.forEach((item: MyWork) => {
       authorList.value.totalHotValue += Number(item.todayHotValue);
       authorList.value.totalWorksUsage += Number(item.useCount);

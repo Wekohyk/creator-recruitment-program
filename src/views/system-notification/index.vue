@@ -10,15 +10,15 @@ const reviewList = ref<ReviewList[]>([]);
 onMounted(async () => {
   await getReview().then((res: ReviewList[]) => {
     reviewList.value = res;
-    console.log(reviewList.value);
   });
 });
 
 const visible = ref(false);
+const publishWidget = ref<ReviewList>();
 const clickProcess = (item: ReviewList) => {
-  console.log('item', item);
+  publishWidget.value = item;
+
   if (item.reviewStatus === 'publish') {
-    console.log('作品已发布');
     visible.value = true;
   }
   if (item.reviewStatus === 'refuse') {
@@ -84,10 +84,6 @@ const clickProcess = (item: ReviewList) => {
             class="i-uiw:right w-16 h-14"
           ></span>
         </div>
-
-        <Mask :visible="visible" @update:visible="visible = $event">
-          <widgetPublish :widgetList="item"></widgetPublish>
-        </Mask>
       </div>
     </div>
   </PageLayout>
@@ -98,6 +94,10 @@ const clickProcess = (item: ReviewList) => {
     <span class="i-ion:time"></span>
     <span class="i-ix:error-filled"></span>
   </div>
+
+  <Mask :visible="visible" @update:visible="visible = $event">
+    <widgetPublish :widgetList="publishWidget"></widgetPublish>
+  </Mask>
 </template>
 
 <style scoped lang="scss"></style>

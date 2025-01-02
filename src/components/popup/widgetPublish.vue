@@ -16,8 +16,20 @@ const props = defineProps({
       {{ $t('popup.widget_publish.index') }}
     </div>
     <div
-      class="relative mt-32 w-174 h-200 rounded-12 bg-$tertiaryBackground"
-    ></div>
+      class="relative mt-32 w-174 h-200 rounded-12 bg-$tertiaryBackground flex-center"
+    >
+      <div
+        :style="{ backgroundImage: `url(${props.widgetList?.widgetImg})` }"
+        :class="[
+          'bg-cover bg-center',
+          props.widgetList?.widgetType[0] === 'small'
+            ? 'w-100 h-100 rounded-8'
+            : props.widgetList?.widgetType[0] === 'medium'
+              ? 'w-154 h-66 rounded-8'
+              : 'w-124 h-120 rounded-8',
+        ]"
+      ></div>
+    </div>
     <div class="mt-8 text-14 lh-20 font-500">
       {{ props.widgetList?.widgetName }}
     </div>
