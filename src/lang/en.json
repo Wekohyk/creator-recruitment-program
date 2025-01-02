@@ -70,6 +70,23 @@
       "passFlame": "Used the Flame to unlock the Flame",
       "passRecharge": "Received the first recharge reward",
       "refundFlame": "Refunded the Flame"
+    },
+    "widget_publish": {
+      "index": "Component Details"
+    },
+    "review_feedback": {
+      "index": "Review Feedback",
+      "respected_designer": "Dear Designer",
+      "unsuccessful_review": "Unfortunately, your component review was not successful.",
+      "component_name": "Component Name: ",
+      "submission_date": "Submission Date: ",
+      "review_unsuccessful_reason": "Reason for Unsuccessful Review: ",
+      "review_unsuccessful_content": "Content to be Modified:",
+      "review_img_content": "Image Content:",
+      "text1": "For more content, please refer to our platform's",
+      "text2": "《Production Standards》",
+      "text3": ". Please strictly follow these standards in future component production to quickly pass the review and see your exquisite components on our platform.",
+      "text4": "If you have any questions or need more guidance, please feel free to contact us. We are willing to provide assistance and support to help you achieve better results in widget design. Thank you for your understanding and cooperation."
     }
   }
 }
