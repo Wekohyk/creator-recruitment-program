@@ -7,7 +7,7 @@ const i18n = getI18n();
 export function getLocale(lang?: string): Languages {
   // 此处可以根据实际情况修改 tw.language
   // lang = lang || tw.language || widget.language;
-  if (lang?.includes('ja')) {
+  if (lang?.includes('ja') || lang?.includes('jp')) {
     return 'jp';
   }
   if (lang?.includes('en')) {

@@ -5,6 +5,7 @@ import { noticeRandom } from './modules/notice';
 import { reviewRandom } from './modules/review-information';
 import { getRandomNumber } from '@/hooks';
 import { reviewFeedback } from './modules/review-feedback';
+import { inviteNewUsers } from './modules/invite-new-users';
 
 // create mock server
 createServer({
@@ -63,6 +64,13 @@ createServer({
             rejectData,
           };
         },
+      );
+      return data;
+    });
+
+    this.get('/invite-new-users', () => {
+      const data = Array.from({ length: getRandomNumber(0, 10) }, () =>
+        inviteNewUsers(),
       );
       return data;
     });

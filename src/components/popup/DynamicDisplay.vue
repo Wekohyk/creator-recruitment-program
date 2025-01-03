@@ -122,7 +122,9 @@ const linkSystemNotification = () => {
                       class="i-tabler:flame-filled w-12 h-12 text-$orange"
                     ></span>
                     <div class="text-12 lh-17 text-$orange">
-                      {{ '热度' + item.hotValue }}
+                      {{
+                        $t('popup.dynamic_display.hot_value') + item.hotValue
+                      }}
                     </div>
                   </div>
                 </div>

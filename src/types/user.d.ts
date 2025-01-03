@@ -37,7 +37,22 @@ export type NoticeList = {
   widgetData?: WidgetData;
 };
 
+export type LevelIcon = {
+  img: string;
+  title: string;
+  level: string;
+  upLevel: string;
+  extraBonus: string;
+  upgradeRequirements: string;
+  needUpValue: number;
+};
+
 export type WidgetData = {
   widgetImg: string;
   widgetType: WidgetType[];
+};
+
+export type InviteNewUsers = {
+  name?: string;
+  avatar?: string;
 };

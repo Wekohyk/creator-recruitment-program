@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { getMyWork } from '@/api';
 import PageLayout from '@/components/PageLayout.vue';
+import hotStage from './hotStage.vue';
+import exclusivePrivilege from './exclusivePrivilege.vue';
+import creatorResourcePack from './creatorResourcePack.vue';
+import growthIncentives from './growthIncentives.vue';
 import { computed, onMounted, ref } from 'vue';
-import { MyWork } from '@/types/user';
+import { LevelIcon, MyWork } from '@/types/user';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
@@ -18,7 +22,6 @@ const authorList = ref({
 onMounted(() => {
   getMyWork().then(res => {
     myWorkList.value = res;
-    console.log('myWorkList', myWorkList.value);
     res.forEach((item: MyWork) => {
       authorList.value.totalHotValue += Number(item.todayHotValue);
       authorList.value.totalWorksUsage += Number(item.useCount);
@@ -29,37 +32,71 @@ onMounted(() => {
 });
 
 const levelIcon = computed(() => {
-  if (authorList.value.totalHotValue < 1500000) {
-    return {
-      img: '/growth-center/level_6.webp',
-      title: t('growth_center.level_6'),
-    };
-  } else if (authorList.value.totalHotValue < 150000) {
-    return {
+  let data: LevelIcon = {
+    img: '/growth-center/level_6.webp',
+    title: t('growth_center.level_6'),
+    level: 'LV6',
+    upLevel: '',
+    extraBonus: '¥5',
+    upgradeRequirements: '100%',
+    needUpValue: 0,
+  };
+  if (authorList.value.totalHotValue < 500000) {
+    data = {
       img: '/growth-center/level_5.webp',
       title: t('growth_center.level_5'),
-    };
-  } else if (authorList.value.totalHotValue < 100000) {
-    return {
-      img: '/growth-center/level_4.webp',
-      title: t('growth_center.level_4'),
-    };
-  } else if (authorList.value.totalHotValue < 50000) {
-    return {
-      img: '/growth-center/level_3.webp',
-      title: t('growth_center.level_3'),
-    };
-  } else if (authorList.value.totalHotValue < 10000) {
-    return {
-      img: '/growth-center/level_2.webp',
-      title: t('growth_center.level_2'),
-    };
-  } else {
-    return {
-      img: '/growth-center/level_1.webp',
-      title: t('growth_center.level_1'),
+      level: 'LV5',
+      upLevel: `LV6(${t('growth_center.level_6')})`,
+      extraBonus: '¥25',
+      upgradeRequirements: `${(authorList.value.totalHotValue / 500000) * 100}%`,
+      needUpValue: 500000 - authorList.value.totalHotValue,
     };
   }
+  if (authorList.value.totalHotValue < 250000) {
+    data = {
+      img: '/growth-center/level_4.webp',
+      title: t('growth_center.level_4'),
+      level: 'LV4',
+      upLevel: `LV5(${t('growth_center.level_5')})`,
+      extraBonus: '¥300',
+      upgradeRequirements: `${(authorList.value.totalHotValue / 250000) * 100}%`,
+      needUpValue: 250000 - authorList.value.totalHotValue,
+    };
+  }
+  if (authorList.value.totalHotValue < 50000) {
+    data = {
+      img: '/growth-center/level_3.webp',
+      title: t('growth_center.level_3'),
+      level: 'LV3',
+      upLevel: `LV4(${t('growth_center.level_4')})`,
+      extraBonus: '¥1500',
+      upgradeRequirements: `${(authorList.value.totalHotValue / 50000) * 100}%`,
+      needUpValue: 50000 - authorList.value.totalHotValue,
+    };
+  }
+  if (authorList.value.totalHotValue < 10000) {
+    data = {
+      img: '/growth-center/level_2.webp',
+      title: t('growth_center.level_2'),
+      level: 'LV2',
+      upLevel: `LV3(${t('growth_center.level_3')})`,
+      extraBonus: '¥3000',
+      upgradeRequirements: `${(authorList.value.totalHotValue / 10000) * 100}%`,
+      needUpValue: 10000 - authorList.value.totalHotValue,
+    };
+  }
+  if (authorList.value.totalHotValue < 1000) {
+    data = {
+      img: '/growth-center/level_1.webp',
+      title: t('growth_center.level_1'),
+      level: 'LV1',
+      upLevel: `LV2(${t('growth_center.level_2')})`,
+      extraBonus: '¥5',
+      upgradeRequirements: `${(authorList.value.totalHotValue / 1000) * 100}%`,
+      needUpValue: 1000 - authorList.value.totalHotValue,
+    };
+  }
+  return data;
 });
 </script>
 
@@ -68,33 +105,50 @@ const levelIcon = computed(() => {
     <template #navigationBarCenter>
       <div>{{ $t('growth_center.index') }}</div>
     </template>
-    <div class="px-16 mt-22">
-      <div
-        class="w-full h-183 bg-#FFF rounded-20 b-1 b-solid b-#E7E7E7 pt-12 py-16 px-20 flex justify-between"
-      >
-        <div class="flex flex-col gap-1 justify-start items-start">
-          <div class="text-$orange text-14 lh-13 font-500 flex items-center">
-            <span class="i-tabler:flame-filled w-12 h-12"></span>
-            <span class="ml-2">
-              {{ $t('growth_center.hot_value') }}
-            </span>
+    <div class="px-16 mt-22 pb-87">
+      <!-- 热度阶段 -->
+      <hotStage :levelIcon="levelIcon" :authorList="authorList"></hotStage>
+      <!-- 已解锁专属特权 -->
+      <exclusivePrivilege
+        :totalHotValue="authorList.totalHotValue"
+        class="mt-20 px-10"
+      ></exclusivePrivilege>
+      <!-- 创作者资源包 -->
+      <creatorResourcePack></creatorResourcePack>
+      <!-- 成长奖励 -->
+      <growthIncentives></growthIncentives>
+      <!-- 按钮即下方内容 -->
+      <div class="flex gap-18 items-center justify-between mt-20">
+        <div
+          class="w-full h-64 bg-#FFF rounded-20 flex items-center pl-19 py-14 gap-10"
+        >
+          <div class="w-36 h-36 rounded-50% bg-#FF9500 flex-center">
+            <span class="i-tabler:flame-filled text-#FFF"></span>
           </div>
-          <div class="text-52 lh-73 font-600">
-            {{ authorList.totalHotValue }}
+          <div class="text-16 lh-22 font-500">
+            {{ $t('growth_center.hot_instruction') }}
           </div>
         </div>
-        <div class="flex flex-col justify-start items-center">
-          <div
-            class="w-70 h-70 bg-cover bg-center"
-            :style="{ backgroundImage: `url(${levelIcon.img})` }"
-          ></div>
-          <div class="text-12 lh-17 text-$tertiaryText">
-            {{ levelIcon.title }}
+        <div
+          class="w-full h-64 bg-#FFF rounded-20 flex items-center pl-19 py-14 gap-10"
+        >
+          <div class="w-36 h-36 rounded-50% bg-#08D36A flex-center">
+            <span class="i-simple-icons:wechat text-#FFF"></span>
+          </div>
+          <div class="text-16 lh-22 font-500">
+            {{ $t('growth_center.join_discussion') }}
           </div>
         </div>
       </div>
 
-      <div></div>
+      <div class="flex-center gap-5 mt-20">
+        <div class="w-20 h-20">
+          <img src="/growth-center/handle.svg" alt="" class="w-full h-full" />
+        </div>
+        <div class="text-12 lh-17 text-#B5B5B5">
+          {{ $t('growth_center.creator_plan') }}
+        </div>
+      </div>
     </div>
   </PageLayout>
 </template>

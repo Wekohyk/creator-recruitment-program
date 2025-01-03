@@ -1,5 +1,5 @@
 import request from '@/utils/request';
-import { AuthorList, MyWork, NoticeList } from '@/types/user';
+import { AuthorList, InviteNewUsers, MyWork, NoticeList } from '@/types/user';
 import { ReviewList } from '@/types/review';
 
 /**
@@ -43,5 +43,12 @@ export const getReview = async (): Promise<ReviewList[]> => {
   // Get the review information from the server
   const response = await request.get('/review-information');
   // Return the review information
+  return response.data;
+};
+
+export const getInviteNewUsers = async (): Promise<InviteNewUsers[]> => {
+  // Get the invite new users from the server
+  const response = await request.get('/invite-new-users');
+  // Return the invite new users
   return response.data;
 };

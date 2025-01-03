@@ -96,8 +96,8 @@ defineExpose({
               <img
                 :src="
                   backBtnDeepShallowMode
-                    ? '/backButton_light.png'
-                    : '/backButton_dark.png'
+                    ? '/back_button_light.png'
+                    : '/back_button_dark.png'
                 "
                 alt=""
                 :style="{

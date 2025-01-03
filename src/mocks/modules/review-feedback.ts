@@ -21,7 +21,7 @@ export const reviewFeedback = () => {
   const submitTime =
     submitTimeYear + '.' + submitTimeMonthString + '.' + submitTimeDayString;
   // 拒绝图片
-  const rejectImg = `/review-feedback/rejectImg${getRandomNumber(1, 2)}.webp`;
+  const rejectImg = `/review-feedback/reject_img_${getRandomNumber(1, 2)}.webp`;
 
   return {
     submitTime,

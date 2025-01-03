@@ -62,7 +62,7 @@ const router = useRouter();
         <div
           class="w-207 h-78 mt-29 rounded-16 overflow-hidden bg-center bg-cover"
           :style="{
-            backgroundImage: `url(/popup/redPacket.webp)`,
+            backgroundImage: `url(/popup/red_packet.webp)`,
           }"
         ></div>
         <div class="text-14 lh-20 text-#818181 mt-9">
