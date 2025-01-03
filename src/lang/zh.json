@@ -98,6 +98,10 @@
       "title4": "社区认可:",
       "content10": "高热力值是创作者影响力的体现，也是获得社区认可的重要标志。",
       "i_know": "我知道了"
+    },
+    "join_group_chat": {
+      "title": "加入微信交流群",
+      "content": "长按二维码加入"
     }
   },
   "system_notification": {

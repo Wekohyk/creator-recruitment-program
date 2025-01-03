@@ -6,13 +6,15 @@ import exclusivePrivilege from './exclusivePrivilege.vue';
 import creatorResourcePack from './creatorResourcePack.vue';
 import growthIncentives from './growthIncentives.vue';
 import explanationPopup from './explanationPopup.vue';
+import joinGroupChat from './joinGroupChat.vue';
 import { computed, onMounted, ref } from 'vue';
 import { LevelIcon, MyWork } from '@/types/user';
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
 const myWorkList = ref<MyWork[]>([]);
-const visible = ref(false);
+const hotVisible = ref(false);
+const joinVisible = ref(false);
 
 const authorList = ref({
   totalWorksUsage: 0,
@@ -123,7 +125,7 @@ const levelIcon = computed(() => {
       <div class="flex gap-18 items-center justify-between mt-20">
         <div
           class="w-full h-64 bg-#FFF rounded-20 flex items-center pl-19 py-14 gap-10"
-          @click="visible = true"
+          @click="hotVisible = true"
         >
           <div class="w-36 h-36 rounded-50% bg-#FF9500 flex-center">
             <span class="i-tabler:flame-filled text-#FFF"></span>
@@ -134,6 +136,7 @@ const levelIcon = computed(() => {
         </div>
         <div
           class="w-full h-64 bg-#FFF rounded-20 flex items-center pl-19 py-14 gap-10"
+          @click="joinVisible = true"
         >
           <div class="w-36 h-36 rounded-50% bg-#08D36A flex-center">
             <span class="i-simple-icons:wechat text-#FFF"></span>
@@ -156,9 +159,13 @@ const levelIcon = computed(() => {
   </PageLayout>
 
   <explanationPopup
-    :visible="visible"
-    @update:visible="visible = $event"
+    :visible="hotVisible"
+    @update:visible="hotVisible = $event"
   ></explanationPopup>
+  <joinGroupChat
+    :visible="joinVisible"
+    @update:visible="joinVisible = $event"
+  ></joinGroupChat>
 </template>
 
 <style scoped lang="scss"></style>

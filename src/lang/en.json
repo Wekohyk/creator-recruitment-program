@@ -79,7 +79,30 @@
     "hot_money": "100 Popularity = ¥1.0",
     "hot_instruction": "Popularity Value Instructions",
     "join_discussion": "Join the Discussion Group",
-    "creator_plan": "Creator Incentive Plan is Being Improved"
+    "creator_plan": "Creator Incentive Plan is Being Improved",
+    "explanation_popup": {
+      "title": "Popularity Value Explanation",
+      "content": "Popularity value is an important indicator of how well your work is received. By increasing your popularity value, you can gain more benefits and creative opportunities in the future.",
+      "title1": "How to Increase Popularity Value?",
+      "content1": "The following actions by users on your work will increase the popularity value:",
+      "content2": "Browsing, adding, using, liking, sharing",
+      "content3": "will all increase the popularity value.",
+      "content4": "By attracting new users to use your work through sharing, you can",
+      "content5": "gain additional popularity value.",
+      "content6": "Note: Each device user’s same action on the same work is only counted once.",
+      "title2": "What is Popularity Value Used For?",
+      "content7": "Withdrawal:",
+      "content8": "You can withdraw the popularity value you have gained, turning your creative passion into actual earnings.",
+      "title3": "Gain More Exposure:",
+      "content9": "Works with high popularity value will receive more recommendations and exposure opportunities, allowing more people to see your wonderful creations.",
+      "title4": "Community Recognition:",
+      "content10": "High popularity value is a reflection of a creator's influence and an important mark of community recognition.",
+      "i_know": "Got it"
+    },
+    "join_group_chat": {
+      "title": "Join WeChat Group Chat",
+      "content": "Long press the QR code to join"
+    }
   },
   "system_notification": {
     "index": "System Notification",
