@@ -156,6 +156,23 @@
     "widget_publish": {
       "index": "组件详情"
     },
+    "look_share_popup": {
+      "title": "看看别人都怎么发",
+      "copy_password": "复制分享口令",
+      "content_1": "让小shit住进了手机里耶👀",
+      "avatar_name_1": "Fara发发",
+      "content_2": "打造属于自己的桌面小组件",
+      "avatar_name_2": "Jin's favorites",
+      "content_3": "极简小组件Top Widgets版",
+      "avatar_name_3": "Maxx",
+      "content_4": "又一款超级组件",
+      "avatar_name_4": "Maxx"
+    },
+    "share_friend": {
+      "title": "分享给好友",
+      "copy_password": "口令已复制",
+      "go_to_share": "去微信、小红书、等App粘贴发送给好友"
+    },
     "review_feedback": {
       "index": "审核反馈",
       "respected_designer": "尊敬的设计师",

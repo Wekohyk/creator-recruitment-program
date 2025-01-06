@@ -156,6 +156,23 @@
     "widget_publish": {
       "index": "コンポーネントの詳細"
     },
+    "look_share_popup": {
+      "title": "他の人がどのように投稿しているかを見る",
+      "copy_password": "共有コマンドをコピー",
+      "content_1": "小さなシットを携帯電話に住まわせる👀",
+      "avatar_name_1": "ファラファファ",
+      "content_2": "自分のデスクトップウィジェットを作成する",
+      "avatar_name_2": "ジンのお気に入り",
+      "content_3": "ミニマリストウィジェット トップウィジェット版",
+      "avatar_name_3": "マックス",
+      "content_4": "もう一つのスーパーウィジェット",
+      "avatar_name_4": "マックス"
+    },
+    "share_friend": {
+      "title": "友達と共有",
+      "copy_password": "コマンドがコピーされました",
+      "go_to_share": "WeChat、Xiaohongshuなどで友達に貼り付けて送信"
+    },
     "review_feedback": {
       "index": "レビューのフィードバック",
       "respected_designer": "親愛なるデザイナー様",

@@ -4,6 +4,7 @@ import { InviteNewUsers } from '@/types/user';
 import { onMounted, ref } from 'vue';
 import NewcomerResourceKit from '@/components/popup/NewcomerResourceKit.vue';
 import discoverPagePopup from './discoverPagePopup.vue';
+import lookSharePopup from '@/components/popup/lookSharePopup.vue';
 import { MyWork } from '@/types/user';
 
 const props = defineProps({
@@ -13,6 +14,7 @@ const props = defineProps({
 const inviteNewUsersList = ref<InviteNewUsers[]>([]);
 const discoverVisible = ref<boolean>(false);
 const creatorVisible = ref<boolean>(false);
+const lookShareVisible = ref<boolean>(false);
 
 onMounted(async () => {
   await getInviteNewUsers().then(res => {
@@ -29,6 +31,13 @@ onMounted(async () => {
     inviteNewUsersList.value = [...inviteNewUsersList.value, ...placeholders];
   });
 });
+
+const openVisible = (item: InviteNewUsers) => {
+  if (!item.name && !item.avatar) {
+    return (lookShareVisible.value = true);
+  }
+  creatorVisible.value = true;
+};
 </script>
 
 <template>
@@ -158,14 +167,16 @@ onMounted(async () => {
         </div>
         <div class="mt-18 w-full grid grid-cols-5 gap-15 px-12">
           <div
-            @click="creatorVisible = true"
+            @click="openVisible(item)"
             class="flex flex-col gap-4 items-center"
             v-for="item in inviteNewUsersList"
             :key="item.name"
           >
             <div
-              class="w-50 h-50 rounded-50% bg-center bg-cover flex-center"
-              :class="item.avatar ? '' : 'b-1 b-dashed b-#FFFFFF/70'"
+              :class="[
+                'w-50 h-50 rounded-50% bg-center bg-cover flex-center',
+                item.avatar ? '' : 'b-1 b-dashed b-#FFFFFF/70',
+              ]"
               :style="{
                 backgroundImage: `url(${item.avatar})`,
               }"
@@ -232,6 +243,11 @@ onMounted(async () => {
       </div>
     </div>
   </div>
+
+  <lookSharePopup
+    :visible="lookShareVisible"
+    @update:visible="lookShareVisible = $event"
+  ></lookSharePopup>
 
   <discoverPagePopup
     :visible="discoverVisible"

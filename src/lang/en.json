@@ -156,6 +156,23 @@
     "widget_publish": {
       "index": "Component Details"
     },
+    "look_share_popup": {
+      "title": "See how others post",
+      "copy_password": "Copy sharing command",
+      "content_1": "Let the little shit live in the phone 👀",
+      "avatar_name_1": "Fara Fafa",
+      "content_2": "Create your own desktop widget",
+      "avatar_name_2": "Jin's favorites",
+      "content_3": "Minimalist widget Top Widgets version",
+      "avatar_name_3": "Maxx",
+      "content_4": "Another super widget",
+      "avatar_name_4": "Maxx"
+    },
+    "share_friend": {
+      "title": "Share with Friends",
+      "copy_password": "Command copied",
+      "go_to_share": "Paste and send to friends on WeChat, Xiaohongshu, etc."
+    },
     "review_feedback": {
       "index": "Review Feedback",
       "respected_designer": "Dear Designer",
