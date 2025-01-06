@@ -99,6 +99,18 @@
       "content10": "高热力值是创作者影响力的体现，也是获得社区认可的重要标志。",
       "i_know": "我知道了"
     },
+    "discover_page_popup": {
+      "title": "什么是上发现页?",
+      "use_count": "人使用",
+      "home": "首页",
+      "discover": "发现",
+      "theme": "主题",
+      "photo": "壁纸",
+      "more": "更多",
+      "content1": "发现页是一个为创作者精心打造的专属",
+      "content2": "展示舞台",
+      "content3": "，集中了很多优秀的创作者及其作品"
+    },
     "join_group_chat": {
       "title": "加入微信交流群",
       "content": "长按二维码加入"

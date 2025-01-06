@@ -8,23 +8,23 @@ import growthIncentives from './growthIncentives.vue';
 import explanationPopup from './explanationPopup.vue';
 import joinGroupChat from './joinGroupChat.vue';
 import { computed, onMounted, ref } from 'vue';
-import { LevelIcon, MyWork } from '@/types/user';
+import { AuthorList, LevelIcon, MyWork } from '@/types/user';
 import { useI18n } from 'vue-i18n';
+
 const { t } = useI18n();
 
 const myWorkList = ref<MyWork[]>([]);
-const hotVisible = ref(false);
-const joinVisible = ref(false);
-
-const authorList = ref({
+const authorList = ref<AuthorList>({
   totalWorksUsage: 0,
   totalHotValue: 0,
   everyTotalWorks: 0,
   everyHotValue: 0,
 });
+const hotVisible = ref(false);
+const joinVisible = ref(false);
 
-onMounted(() => {
-  getMyWork().then(res => {
+onMounted(async () => {
+  await getMyWork().then(res => {
     myWorkList.value = res;
     res.forEach((item: MyWork) => {
       authorList.value.totalHotValue += Number(item.todayHotValue);
@@ -115,7 +115,7 @@ const levelIcon = computed(() => {
       <!-- 已解锁专属特权 -->
       <exclusivePrivilege
         :totalHotValue="authorList.totalHotValue"
-        class="mt-20 px-10"
+        :workList="myWorkList"
       ></exclusivePrivilege>
       <!-- 创作者资源包 -->
       <creatorResourcePack></creatorResourcePack>
@@ -166,6 +166,14 @@ const levelIcon = computed(() => {
     :visible="joinVisible"
     @update:visible="joinVisible = $event"
   ></joinGroupChat>
+
+  <!-- 防止icon加载不出来 -->
+  <div class="fixed z-[-9999999999] top-100000 left-100000">
+    <div class="i-bxs:home"></div>
+    <div class="i-bxs:widget"></div>
+    <div class="i-tabler:photo-filled"></div>
+    <div class="i-mingcute:more-3-fill"></div>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>

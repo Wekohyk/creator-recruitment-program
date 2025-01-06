@@ -23,6 +23,12 @@ export type MyWork = {
   hotValue: string;
   todayHotValue: string;
   notice: NoticeList[];
+  creator: CreatorMirage;
+};
+
+export type CreatorMirage = {
+  creatorName: string;
+  creatorAvatar: string;
 };
 
 export type NoticeList = {

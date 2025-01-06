@@ -6,6 +6,7 @@ import { reviewRandom } from './modules/review-information';
 import { getRandomNumber } from '@/hooks';
 import { reviewFeedback } from './modules/review-feedback';
 import { inviteNewUsers } from './modules/invite-new-users';
+import { creatorMirage } from './modules/creatorData';
 
 // create mock server
 createServer({
@@ -30,9 +31,11 @@ createServer({
         const notice = Array.from({ length: getRandomNumber(0, 20) }, () =>
           noticeRandom(),
         );
+        const creator = creatorMirage();
         return {
           ...myWork,
           notice,
+          creator,
         };
       });
       return data;

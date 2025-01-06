@@ -5,6 +5,7 @@ const props = defineProps({
   content: String,
   width: Number,
   height: Number,
+  background: String,
 });
 
 const contentValue = computed(() => {
@@ -18,10 +19,13 @@ const contentValue = computed(() => {
 
 <template>
   <div
-    class="bg-$secondaryBackground rounded-4 font-600 text-11 lh-11 text-$quaternaryText flex-center"
+    class="rounded-4 font-600 text-11 lh-11 text-$quaternaryText flex-center"
     :style="{
       width: `${width}px`,
       height: `${height}px`,
+      background: props.background
+        ? props.background
+        : 'var(--secondaryBackground)',
     }"
   >
     {{ contentValue }}
