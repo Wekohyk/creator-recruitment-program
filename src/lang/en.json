@@ -99,6 +99,18 @@
       "content10": "High popularity value is a reflection of a creator's influence and an important mark of community recognition.",
       "i_know": "Got it"
     },
+    "discover_page_popup": {
+      "title": "What is the Discovery Page?",
+      "use_count": "people use",
+      "home": "Home",
+      "discover": "Discover",
+      "theme": "Theme",
+      "photo": "Photo",
+      "more": "More",
+      "content1": "The Discovery Page is a dedicated",
+      "content2": "showcase stage",
+      "content3": "that features many outstanding creators and their works"
+    },
     "join_group_chat": {
       "title": "Join WeChat Group Chat",
       "content": "Long press the QR code to join"
