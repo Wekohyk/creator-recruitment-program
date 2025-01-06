@@ -7,6 +7,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  openMethod: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['update:visible']);
@@ -49,15 +53,20 @@ const router = useRouter();
       class="fixed top-0 left-0 z-99 w-100vw h-100vh bg-#000000/60 duration-300 transition-all ease-in-out flex-center flex-col"
       @click="emit('update:visible', false)"
     >
-      <div class="font-600 text-20 lh-28 text-#FFF6E4">
+      <div v-if="!props.openMethod" class="font-600 text-20 lh-28 text-#FFF6E4">
         {{ $t('popup.newcomer_resource_kit.title') }}
       </div>
       <div
-        class="mt-19 w-343 h-390 bg-#FFF rounded-16 flex-center flex-col"
+        class="mt-19 bg-#FFF rounded-16 flex-center flex-col"
+        :class="!props.openMethod ? 'w-343 h-390' : 'w-344 h-311'"
         @click.stop
       >
         <div class="text-20 lh-28 font-600">
-          {{ $t('popup.newcomer_resource_kit.content') }}
+          {{
+            !props.openMethod
+              ? $t('popup.newcomer_resource_kit.content')
+              : $t('popup.newcomer_resource_kit.creator_resource_pack')
+          }}
         </div>
         <div
           class="w-207 h-78 mt-29 rounded-16 overflow-hidden bg-center bg-cover"
@@ -85,7 +94,10 @@ const router = useRouter();
             </div>
           </div>
         </div>
-        <div class="w-full px-23 flex items-center justify-between mt-33">
+        <div
+          v-if="!props.openMethod"
+          class="w-full px-23 flex items-center justify-between mt-33"
+        >
           <div
             class="w-141.5 h-44 b-1 b-solid b-#DEDEDE flex-center rounded-35 text-14 lh-20 text-#BCBCBC"
             @click="emit('update:visible', false)"
@@ -103,6 +115,13 @@ const router = useRouter();
             {{ $t('popup.newcomer_resource_kit.claim_now') }}
           </div>
         </div>
+      </div>
+      <div
+        v-if="props.openMethod"
+        @click="emit('update:visible', false)"
+        class="w-40 h-40 b-1 b-solid b-#FFF rounded-50% flex-center mt-16"
+      >
+        <img src="/turn_off.svg" alt="" class="w-16 h-16" />
       </div>
     </div>
   </transition>

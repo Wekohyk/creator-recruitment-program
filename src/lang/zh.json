@@ -122,7 +122,8 @@
       "creative_resources": "创作资源",
       "rich_widget_library": "丰富组件库",
       "not_claiming_for_now": "暂不领取",
-      "claim_now": "立即领取"
+      "claim_now": "立即领取",
+      "creator_resource_pack": "创作者资源包"
     },
     "dynamic_display": {
       "index": "全部动态",

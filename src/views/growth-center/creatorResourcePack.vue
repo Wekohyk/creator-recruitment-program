@@ -2,6 +2,7 @@
 import { getInviteNewUsers } from '@/api';
 import { InviteNewUsers } from '@/types/user';
 import { onMounted, ref } from 'vue';
+import NewcomerResourceKit from '@/components/popup/NewcomerResourceKit.vue';
 
 const inviteNewUsersList = ref<InviteNewUsers[]>([]);
 
@@ -20,6 +21,8 @@ onMounted(async () => {
     inviteNewUsersList.value = [...inviteNewUsersList.value, ...placeholders];
   });
 });
+
+const creatorVisible = ref(false);
 </script>
 
 <template>
@@ -146,6 +149,7 @@ onMounted(async () => {
         </div>
         <div class="mt-18 w-full grid grid-cols-5 gap-15 px-12">
           <div
+            @click="creatorVisible = true"
             class="flex flex-col gap-4 items-center"
             v-for="item in inviteNewUsersList"
             :key="item.name"
@@ -168,7 +172,7 @@ onMounted(async () => {
           </div>
         </div>
         <!-- 按钮 -->
-        <div class="mt-28 w-full h-46 px-7">
+        <div @click="creatorVisible = true" class="mt-28 w-full h-46 px-7">
           <div
             class="w-full h-full flex-center gap-5 bg-gradient-to-r from-[#FFF1BF] to-[#FFCD83] rounded-28 text-16 lh-22 font-500 text-#C51818"
           >
@@ -219,6 +223,12 @@ onMounted(async () => {
       </div>
     </div>
   </div>
+
+  <NewcomerResourceKit
+    openMethod
+    :visible="creatorVisible"
+    @update:visible="creatorVisible = $event"
+  ></NewcomerResourceKit>
 </template>
 
 <style scoped lang="scss"></style>
