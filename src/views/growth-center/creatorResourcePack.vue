@@ -3,8 +3,16 @@ import { getInviteNewUsers } from '@/api';
 import { InviteNewUsers } from '@/types/user';
 import { onMounted, ref } from 'vue';
 import NewcomerResourceKit from '@/components/popup/NewcomerResourceKit.vue';
+import discoverPagePopup from './discoverPagePopup.vue';
+import { MyWork } from '@/types/user';
+
+const props = defineProps({
+  workList: Array as () => MyWork[],
+});
 
 const inviteNewUsersList = ref<InviteNewUsers[]>([]);
+const discoverVisible = ref<boolean>(false);
+const creatorVisible = ref<boolean>(false);
 
 onMounted(async () => {
   await getInviteNewUsers().then(res => {
@@ -21,8 +29,6 @@ onMounted(async () => {
     inviteNewUsersList.value = [...inviteNewUsersList.value, ...placeholders];
   });
 });
-
-const creatorVisible = ref(false);
 </script>
 
 <template>
@@ -82,7 +88,10 @@ const creatorVisible = ref(false);
             </div>
           </div>
 
-          <div class="flex flex-col items-center gap-10">
+          <div
+            class="flex flex-col items-center gap-10"
+            @click="discoverVisible = true"
+          >
             <div
               class="w-74 h-74 rounded-16 b-1 b-solid b-#F1F6FF bg-gradient-to-b from-[#F0F5FF] to-[#FFFFFF] flex-center relative"
             >
@@ -223,6 +232,12 @@ const creatorVisible = ref(false);
       </div>
     </div>
   </div>
+
+  <discoverPagePopup
+    :visible="discoverVisible"
+    @update:visible="discoverVisible = $event"
+    :workList="props.workList"
+  ></discoverPagePopup>
 
   <NewcomerResourceKit
     openMethod

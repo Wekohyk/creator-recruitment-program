@@ -115,10 +115,9 @@ const levelIcon = computed(() => {
       <!-- 已解锁专属特权 -->
       <exclusivePrivilege
         :totalHotValue="authorList.totalHotValue"
-        :workList="myWorkList"
       ></exclusivePrivilege>
       <!-- 创作者资源包 -->
-      <creatorResourcePack></creatorResourcePack>
+      <creatorResourcePack :workList="myWorkList"></creatorResourcePack>
       <!-- 成长奖励 -->
       <growthIncentives></growthIncentives>
       <!-- 按钮即下方内容 -->
