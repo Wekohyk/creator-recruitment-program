@@ -122,7 +122,8 @@
       "creative_resources": "クリエイティブリソース",
       "rich_widget_library": "リッチウィジェットライブラリ",
       "not_claiming_for_now": "一時的に受け取らない",
-      "claim_now": "すぐに受け取る"
+      "claim_now": "今すぐ請求",
+      "creator_resource_pack": "クリエイターリソースパック"
     },
     "dynamic_display": {
       "index": "全動態",
