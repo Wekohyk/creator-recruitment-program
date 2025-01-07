@@ -201,6 +201,10 @@
     "my_wallet": "我的钱包",
     "about_us": "关于我们",
     "my_works": "我的作品",
-    "level_description": "等级说明:"
+    "level_description": "等级说明:",
+    "your_no_works": "你当前还没有作品",
+    "please_open": "请打开",
+    "web_page": "网页端",
+    "publish_new_works": "发布新作品吧~"
   }
 }
