@@ -7,14 +7,14 @@ import CardBanner from './CardBanner.vue';
 import { cardList } from '@/mocks/modules/author';
 import { onMounted, ref } from 'vue';
 import { getMyWork } from '@/api';
-import { AuthorList, MyWork } from '@/types/user';
+import { AuthorData, MyWork } from '@/types/user';
 
 // 控制弹窗显隐
 const visible = ref(false);
 // 我的作品列表
 const myWorkList = ref<MyWork[]>([]);
 // 总使用
-const authorList = ref<AuthorList>({
+const authorList = ref<AuthorData>({
   totalWorksUsage: 0,
   totalHotValue: 0,
   everyTotalWorks: 0,
@@ -28,10 +28,10 @@ onMounted(async () => {
   await getMyWork().then(res => {
     myWorkList.value = res;
     res.forEach((item: MyWork) => {
-      authorList.value.totalHotValue += Number(item.todayHotValue);
-      authorList.value.totalWorksUsage += Number(item.useCount);
-      authorList.value.everyTotalWorks += Number(item.todayUseCount);
-      authorList.value.everyHotValue += Number(item.todayHotValue);
+      authorList.value.totalHotValue! += Number(item.todayHotValue);
+      authorList.value.totalWorksUsage! += Number(item.useCount);
+      authorList.value.everyTotalWorks! += Number(item.todayUseCount);
+      authorList.value.everyHotValue! += Number(item.todayHotValue);
       // 处理总通知
       item.notice.forEach(element => {
         totalNoticeNumber.value += element.widgetNotice;

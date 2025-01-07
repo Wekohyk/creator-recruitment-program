@@ -2,6 +2,7 @@
   "copySuccess": "复制成功",
   "copyFail": "复制失败, 请重试",
   "openContent": "在TopWidgets⁺中打开",
+  "money_symbol": "¥",
   "widget": {
     "weather": "天气",
     "x_panel": "X面板",
@@ -187,5 +188,19 @@
       "text3": "，请在后续组件制作过程中，严格按照此标准，以便快速通过审核，在我们平台上看到您的精美组件。",
       "text4": "如果您有任何疑问或需要更多指导，请随时与我们联系。我们愿意为您提供协助和支持，帮助您在小组件设计中取得更好的成果。感谢您的理解与合作。"
     }
+  },
+  "mine": {
+    "index": "我的",
+    "real_name_authentication": "实名认证",
+    "un_real_name_authentication": "未实名认证",
+    "scan": "扫一扫",
+    "login_squall": "登陆Squall",
+    "growth_center": "成长中心",
+    "daily_push": "每日推送",
+    "unsubscribed": "未订阅",
+    "my_wallet": "我的钱包",
+    "about_us": "关于我们",
+    "my_works": "我的作品",
+    "level_description": "等级说明:"
   }
 }

@@ -8,13 +8,13 @@ import growthIncentives from './growthIncentives.vue';
 import explanationPopup from './explanationPopup.vue';
 import joinGroupChat from './joinGroupChat.vue';
 import { computed, onMounted, ref } from 'vue';
-import { AuthorList, LevelIcon, MyWork } from '@/types/user';
+import { AuthorData, LevelIcon, MyWork } from '@/types/user';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
 const myWorkList = ref<MyWork[]>([]);
-const authorList = ref<AuthorList>({
+const authorList = ref<AuthorData>({
   totalWorksUsage: 0,
   totalHotValue: 0,
   everyTotalWorks: 0,
@@ -27,10 +27,10 @@ onMounted(async () => {
   await getMyWork().then(res => {
     myWorkList.value = res;
     res.forEach((item: MyWork) => {
-      authorList.value.totalHotValue += Number(item.todayHotValue);
-      authorList.value.totalWorksUsage += Number(item.useCount);
-      authorList.value.everyTotalWorks += Number(item.todayUseCount);
-      authorList.value.everyHotValue += Number(item.todayHotValue);
+      authorList.value.totalHotValue! += Number(item.todayHotValue);
+      authorList.value.totalWorksUsage! += Number(item.useCount);
+      authorList.value.everyTotalWorks! += Number(item.todayUseCount);
+      authorList.value.everyHotValue! += Number(item.todayHotValue);
     });
   });
 });
@@ -45,59 +45,59 @@ const levelIcon = computed(() => {
     upgradeRequirements: '100%',
     needUpValue: 0,
   };
-  if (authorList.value.totalHotValue < 500000) {
+  if (authorList.value.totalHotValue! < 1500000) {
     data = {
       img: '/growth-center/level_5.webp',
       title: t('growth_center.level_5'),
       level: 'LV5',
       upLevel: `LV6(${t('growth_center.level_6')})`,
       extraBonus: '¥25',
-      upgradeRequirements: `${(authorList.value.totalHotValue / 500000) * 100}%`,
-      needUpValue: 500000 - authorList.value.totalHotValue,
+      upgradeRequirements: `${(authorList.value.totalHotValue! / 500000) * 100}%`,
+      needUpValue: 500000 - authorList.value.totalHotValue!,
     };
   }
-  if (authorList.value.totalHotValue < 250000) {
+  if (authorList.value.totalHotValue! < 500000) {
     data = {
       img: '/growth-center/level_4.webp',
       title: t('growth_center.level_4'),
       level: 'LV4',
       upLevel: `LV5(${t('growth_center.level_5')})`,
       extraBonus: '¥300',
-      upgradeRequirements: `${(authorList.value.totalHotValue / 250000) * 100}%`,
-      needUpValue: 250000 - authorList.value.totalHotValue,
+      upgradeRequirements: `${(authorList.value.totalHotValue! / 250000) * 100}%`,
+      needUpValue: 250000 - authorList.value.totalHotValue!,
     };
   }
-  if (authorList.value.totalHotValue < 50000) {
+  if (authorList.value.totalHotValue! < 250000) {
     data = {
       img: '/growth-center/level_3.webp',
       title: t('growth_center.level_3'),
       level: 'LV3',
       upLevel: `LV4(${t('growth_center.level_4')})`,
       extraBonus: '¥1500',
-      upgradeRequirements: `${(authorList.value.totalHotValue / 50000) * 100}%`,
-      needUpValue: 50000 - authorList.value.totalHotValue,
+      upgradeRequirements: `${(authorList.value.totalHotValue! / 50000) * 100}%`,
+      needUpValue: 50000 - authorList.value.totalHotValue!,
     };
   }
-  if (authorList.value.totalHotValue < 10000) {
+  if (authorList.value.totalHotValue! < 50000) {
     data = {
       img: '/growth-center/level_2.webp',
       title: t('growth_center.level_2'),
       level: 'LV2',
       upLevel: `LV3(${t('growth_center.level_3')})`,
       extraBonus: '¥3000',
-      upgradeRequirements: `${(authorList.value.totalHotValue / 10000) * 100}%`,
-      needUpValue: 10000 - authorList.value.totalHotValue,
+      upgradeRequirements: `${(authorList.value.totalHotValue! / 10000) * 100}%`,
+      needUpValue: 10000 - authorList.value.totalHotValue!,
     };
   }
-  if (authorList.value.totalHotValue < 1000) {
+  if (authorList.value.totalHotValue! < 2000) {
     data = {
       img: '/growth-center/level_1.webp',
       title: t('growth_center.level_1'),
       level: 'LV1',
       upLevel: `LV2(${t('growth_center.level_2')})`,
       extraBonus: '¥5',
-      upgradeRequirements: `${(authorList.value.totalHotValue / 1000) * 100}%`,
-      needUpValue: 1000 - authorList.value.totalHotValue,
+      upgradeRequirements: `${(authorList.value.totalHotValue! / 1000) * 100}%`,
+      needUpValue: 1000 - authorList.value.totalHotValue!,
     };
   }
   return data;

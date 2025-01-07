@@ -5,11 +5,21 @@ export type CardList = {
   title: string;
 };
 
-export type AuthorList = {
-  totalWorksUsage: number;
-  totalHotValue: number;
-  everyTotalWorks: number;
-  everyHotValue: number;
+export type AuthorData = {
+  totalWorksUsage?: number;
+  totalHotValue?: number;
+  everyTotalWorks?: number;
+  everyHotValue?: number;
+  creatorName?: string;
+  creatorAvatar?: string;
+  isRealNameAuthentication?: boolean;
+  creatorLeave?: number;
+  creatorLevelImg?: string;
+  moneyData?: MoneyContent;
+};
+
+export type MoneyContent = {
+  moneyContent: number;
 };
 
 export type WidgetType = 'small' | 'medium' | 'large';

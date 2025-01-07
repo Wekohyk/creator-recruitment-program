@@ -2,6 +2,7 @@
   "copySuccess": "Copy Success",
   "copyFail": "Copy failed, please try again",
   "openContent": "Open in TopWidgets⁺",
+  "money_symbol": "$",
   "widget": {
     "weather": "Weather",
     "x_panel": "X Panel",

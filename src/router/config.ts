@@ -13,6 +13,11 @@ export const routes = [
         meta: { title: 'data-statistics' },
         children: data_statistics,
       },
+      {
+        path: '/mine',
+        component: () => import('@/views/mine/index.vue'),
+        meta: { title: 'mine' },
+      },
     ],
   },
   // 成长中心

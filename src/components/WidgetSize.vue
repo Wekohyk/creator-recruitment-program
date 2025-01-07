@@ -6,6 +6,7 @@ const props = defineProps({
   width: Number,
   height: Number,
   background: String,
+  fontSize: String,
 });
 
 const contentValue = computed(() => {
@@ -19,13 +20,15 @@ const contentValue = computed(() => {
 
 <template>
   <div
-    class="rounded-4 font-600 text-11 lh-11 text-$quaternaryText flex-center"
+    class="rounded-4 font-600 text-$quaternaryText flex-center"
     :style="{
       width: `${width}px`,
       height: `${height}px`,
       background: props.background
         ? props.background
         : 'var(--secondaryBackground)',
+      'font-size': props.fontSize ? props.fontSize : '11px',
+      'line-height': props.fontSize ? props.fontSize : '11px',
     }"
   >
     {{ contentValue }}

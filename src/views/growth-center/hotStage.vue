@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { type LevelIcon, type AuthorList } from '@/types/user';
+import { type LevelIcon, type AuthorData } from '@/types/user';
 
 const props = defineProps({
   levelIcon: Object as () => LevelIcon,
-  authorList: Object as () => AuthorList,
+  authorList: Object as () => AuthorData,
 });
 </script>
 

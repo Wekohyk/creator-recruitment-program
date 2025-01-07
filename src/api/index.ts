@@ -1,5 +1,5 @@
 import request from '@/utils/request';
-import { AuthorList, InviteNewUsers, MyWork, NoticeList } from '@/types/user';
+import { AuthorData, InviteNewUsers, MyWork, NoticeList } from '@/types/user';
 import { ReviewList } from '@/types/review';
 
 /**
@@ -17,7 +17,7 @@ export const getMyWork = async (): Promise<MyWork[]> => {
  * Get the author information
  * @returns The author information
  */
-export const getAuthor = async (): Promise<AuthorList[]> => {
+export const getAuthor = async (): Promise<AuthorData> => {
   // Get the author information from the server
   const response = await request.get('/author');
   // Return the author information
