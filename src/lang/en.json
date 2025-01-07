@@ -188,5 +188,23 @@
       "text3": ". Please strictly follow these standards in future component production to quickly pass the review and see your exquisite components on our platform.",
       "text4": "If you have any questions or need more guidance, please feel free to contact us. We are willing to provide assistance and support to help you achieve better results in widget design. Thank you for your understanding and cooperation."
     }
+  },
+  "mine": {
+    "index": "Mine",
+    "real_name_authentication": "Real Name Authentication",
+    "un_real_name_authentication": "Not Real Name Authenticated",
+    "scan": "Scan",
+    "login_squall": "Login Squall",
+    "growth_center": "Growth Center",
+    "daily_push": "Daily Push",
+    "unsubscribed": "Unsubscribed",
+    "my_wallet": "My Wallet",
+    "about_us": "About Us",
+    "my_works": "My Works",
+    "level_description": "Level Description:",
+    "your_no_works": "You currently have no works",
+    "please_open": "Please open",
+    "web_page": "Web Page",
+    "publish_new_works": "Publish new works~"
   }
 }

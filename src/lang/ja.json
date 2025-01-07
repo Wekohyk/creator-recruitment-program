@@ -190,6 +190,21 @@
     }
   },
   "mine": {
-    "index": "我的"
+    "index": "マイ",
+    "real_name_authentication": "実名認証",
+    "un_real_name_authentication": "未実名認証",
+    "scan": "スキャン",
+    "login_squall": "Squallにログイン",
+    "growth_center": "成長センター",
+    "daily_push": "毎日のプッシュ",
+    "unsubscribed": "未購読",
+    "my_wallet": "マイウォレット",
+    "about_us": "私たちについて",
+    "my_works": "私の作品",
+    "level_description": "レベル説明:",
+    "your_no_works": "あなたは現在作品がありません",
+    "please_open": "開いてください",
+    "web_page": "ウェブページ",
+    "publish_new_works": "新しい作品を発表しよう~"
   }
 }
