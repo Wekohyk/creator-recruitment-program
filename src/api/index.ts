@@ -52,3 +52,9 @@ export const getInviteNewUsers = async (): Promise<InviteNewUsers[]> => {
   // Return the invite new users
   return response.data;
 };
+
+// 获取钱包
+export const getWallet = async () => {
+  const response = await request.get('/wallet');
+  return response.data;
+};

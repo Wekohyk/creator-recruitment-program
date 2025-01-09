@@ -81,5 +81,10 @@ createServer({
       );
       return data;
     });
+
+    this.get('/wallet', () => {
+      const data = myWallet();
+      return data;
+    });
   },
 });

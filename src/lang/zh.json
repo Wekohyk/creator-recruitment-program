@@ -3,6 +3,9 @@
   "copyFail": "复制失败, 请重试",
   "openContent": "在TopWidgets⁺中打开",
   "money_symbol": "¥",
+  "year": "年",
+  "month": "月",
+  "day": "日",
   "widget": {
     "weather": "天气",
     "x_panel": "X面板",
@@ -205,6 +208,32 @@
     "your_no_works": "你当前还没有作品",
     "please_open": "请打开",
     "web_page": "网页端",
-    "publish_new_works": "发布新作品吧~"
+    "publish_new_works": "发布新作品吧~",
+    "level_content1": "入门创作者 (热度值 <2000): 初步接触创作",
+    "level_content2": "见习创作者 (热度值 2000): 基本身份和社区认可",
+    "level_content3": "新锐创作者 (热度值 50000): 解锁更多创作工具",
+    "level_content4": "资深创作者 (热度值 250000): 获得专属的推广机会",
+    "level_content5": "精英创作者 (热度值 500000): 优先参与平台活动",
+    "level_content6": "知名创作者 (热度值 1500000): 最高平台支持和曝光"
+  },
+  "my_wallet": {
+    "index": "我的钱包",
+    "available_withdrawal_amount": "可提现金额",
+    "content_earnings": "内容创作收益",
+    "hot_value": "100热度值 =  1.0元",
+    "go_withdraw": "去提现",
+    "total_withdraw": "累计提现: ",
+    "red_packet_reward": "红包奖励: ",
+    "amount_details": "金额明细",
+    "inter_growth_reward1": "见习创作者-成长红包奖励",
+    "inter_growth_reward2": "新锐创作者-成长红包奖励",
+    "inter_growth_reward3": "资深创作者-成长红包奖励",
+    "inter_growth_reward4": "精英创作者-成长红包奖励",
+    "inter_growth_reward5": "知名创作者-成长红包奖励",
+    "withdrawal": "提现",
+    "withdrawal_error": "提现失败-退回",
+    "everyday_settlement": "每日结算",
+    "personal_income_tax": "20%个人偶然所得税",
+    "newcomer_resource_pack": "新人资源包"
   }
 }

@@ -38,4 +38,10 @@ export const routes = [
     component: () => import('@/views/review-feedback/index.vue'),
     meta: { title: 'review-feedback' },
   },
+  // 我的钱包
+  {
+    path: '/my-wallet',
+    component: () => import('@/views/my-wallet/index.vue'),
+    meta: { title: 'my-wallet' },
+  },
 ];

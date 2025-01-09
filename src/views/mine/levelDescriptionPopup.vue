@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 const props = defineProps({
   visible: {
     type: Boolean,
@@ -12,12 +16,12 @@ const props = defineProps({
 const emit = defineEmits(['update:visible']);
 
 const levelDescriptionList = [
-  { level: 1, title: '入门创作者 (热度值 <2000): 初步接触创作' },
-  { level: 2, title: '见习创作者 (热度值 2000): 基本身份和社区认可' },
-  { level: 3, title: '新锐创作者 (热度值 50000): 解锁更多创作工具' },
-  { level: 4, title: '资深创作者 (热度值 250000): 获得专属的推广机会' },
-  { level: 5, title: '精英创作者 (热度值 500000): 优先参与平台活动' },
-  { level: 6, title: '知名创作者 (热度值 1500000): 最高平台支持和曝光' },
+  { level: 1, title: t('mine.level_content1') },
+  { level: 2, title: t('mine.level_content2') },
+  { level: 3, title: t('mine.level_content3') },
+  { level: 4, title: t('mine.level_content4') },
+  { level: 5, title: t('mine.level_content5') },
+  { level: 6, title: t('mine.level_content6') },
 ];
 </script>
 

@@ -72,3 +72,15 @@ export type InviteNewUsers = {
   name?: string;
   avatar?: string;
 };
+
+export type Wallet = {
+  moneyContent: number;
+  totalWithdraw: number;
+  amountDetails: {
+    walletDetailIcon: string;
+    walletDetailColor: string;
+    walletDetailTitle: string;
+    walletDetailMoney: number;
+    submitTime: string;
+  }[];
+};

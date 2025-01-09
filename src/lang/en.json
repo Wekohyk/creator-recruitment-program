@@ -3,6 +3,9 @@
   "copyFail": "Copy failed, please try again",
   "openContent": "Open in TopWidgets⁺",
   "money_symbol": "$",
+  "year": "Year",
+  "month": "Month",
+  "day": "Day",
   "widget": {
     "weather": "Weather",
     "x_panel": "X Panel",

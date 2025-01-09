@@ -3,6 +3,9 @@
   "copyFail": "コピー失敗しました、もう一度試してください",
   "openContent": "TopWidgets⁺で開く",
   "money_symbol": "¥",
+  "year": "年",
+  "month": "月",
+  "day": "日",
   "widget": {
     "Weather": "天気",
     "X_panel": "Xパネル",

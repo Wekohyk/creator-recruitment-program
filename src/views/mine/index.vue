@@ -128,7 +128,10 @@ onMounted(async () => {
         <div class="w-[calc(100%-36px)] h-1 bg-$primaryDivider ml-36"></div>
 
         <!-- 我的钱包 -->
-        <div class="flex items-center justify-between">
+        <div
+          @click="$router.push('/my-wallet')"
+          class="flex items-center justify-between"
+        >
           <div class="flex items-center gap-10">
             <div
               class="w-26 h-26 rounded-6 bg-#07C160 flex-center text-#FFF text-18 lh-26"
