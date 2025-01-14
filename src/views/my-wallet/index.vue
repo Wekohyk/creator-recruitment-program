@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue';
 import PageLayout from '@/components/PageLayout.vue';
 import { getAuthor, getWallet } from '@/api';
 import { Wallet } from '@/types/user';
+import hintCard from './hintCard.vue';
 
 const myWallet = ref<Wallet>();
 const authorLevel = ref();
@@ -26,6 +27,11 @@ onMounted(async () => {
     }
   });
 });
+
+const hotTipsVisible = ref(false);
+const hotTips = () => {
+  hotTipsVisible.value = !hotTipsVisible.value;
+};
 </script>
 
 <template>
@@ -48,11 +54,28 @@ onMounted(async () => {
               {{ $t('my_wallet.content_earnings') }}
             </div>
           </div>
-          <div class="flex items-center gap-6">
+          <div class="flex items-center gap-6 relative" @click="hotTips">
             <div class="text-12 lh-17 text-#FFF/70">
               {{ $t('my_wallet.hot_value') }}
             </div>
             <div class="i-mingcute:question-fill w-13 h-13 text-#FFF/70"></div>
+            <div
+              :class="[
+                'absolute top-27 right-0 px-11 pb-7 pt-11 bg-#FFF rounded-8 min-w-170 transition-opacity ease-in-out duration-300  shadow-[0px_0px_10px_0px_#00000026]',
+                hotTipsVisible
+                  ? 'opacity-100'
+                  : 'opacity-0 pointer-events-none',
+              ]"
+            >
+              <div class="relative">
+                <div
+                  class="absolute top-[-20px] left-2/3 w-0 h-0 b-b-10 b-b-solid b-b-#FFF b-x-10 b-x-solid b-x-transparent"
+                ></div>
+                <div class="text-12 lh-17 text-$tertiaryText">
+                  {{ '🔥 ' + $t('my_wallet.hot_tips') }}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -145,6 +168,10 @@ onMounted(async () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="fixed bottom-14 right-13">
+        <hintCard></hintCard>
       </div>
     </div>
   </PageLayout>

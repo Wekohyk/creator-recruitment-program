@@ -238,6 +238,23 @@
     "withdrawal_error": "Withdrawal Failed-Returned",
     "everyday_settlement": "Daily Settlement",
     "personal_income_tax": "20% Personal Occasional Income Tax",
-    "newcomer_resource_pack": "Newcomer Resource Pack"
+    "newcomer_resource_pack": "Newcomer Resource Pack",
+    "hot_tips": "Hot value is a platform evaluation metric for creators' works, and creators can gain more hot value through content creation.",
+    "hint_card": {
+      "tax_payment": "Tax Payment Certificate",
+      "online_service": "Online Customer Service"
+    },
+    "tax_payment": {
+      "index": "Tax Payment Certificate",
+      "hint": "Personal occasional income tax should be declared uniformly before the 15th of the next month.",
+      "first_step": "First Step:",
+      "second_step": "Second Step:",
+      "third_step": "Third Step:",
+      "fourth_step": "Fourth Step:",
+      "content_1": "Open the App Store on your phone, search for the 'Personal Income Tax' App, and download and install it.",
+      "content_2": "Open the installed App and register and log in using your mobile number or ID card number.",
+      "content_3": "Find the 'Income Tax Details' function entry on the App's homepage.",
+      "content_4": "Follow the system prompts to select the query time range and relevant options to obtain personal occasional income tax payment information."
+    }
   }
 }

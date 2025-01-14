@@ -238,6 +238,23 @@
     "withdrawal_error": "提现失败-退回",
     "everyday_settlement": "每日结算",
     "personal_income_tax": "20%个人偶然所得税",
-    "newcomer_resource_pack": "新人资源包"
+    "newcomer_resource_pack": "新人资源包",
+    "hot_tips": "热度值是平台对创作者作品的评价指标，创作者可凭借内容创作从而获得更多热度值",
+    "hint_card": {
+      "tax_payment": "完税凭证",
+      "online_service": "在线客服"
+    },
+    "tax_payment": {
+      "index": "完税凭证",
+      "hint": "个人偶然所得税于次月 15 号前统一进行申报",
+      "first_step": "第一步：",
+      "second_step": "第二步：",
+      "third_step": "第三步：",
+      "fourth_step": "第四步：",
+      "content_1": "打开手机App Store，搜索「个人所得税」App”并下载安装。",
+      "content_2": "打开安装好的 App，使用手机号或身份证号进行注册和登录。",
+      "content_3": "在 App 首页找到“收入纳税明细”功能入口。",
+      "content_4": "根据系统提示，选择查询的时间范围和相关选项，获取个人偶然所得税完税信息。"
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "copySuccess": "コピー成功",
-  "copyFail": "コピー失敗しました、もう一度試してください",
+  "copyFail": "コピー失敗, もう一度試してください",
   "openContent": "TopWidgets⁺で開く",
   "money_symbol": "¥",
   "year": "年",
@@ -10,11 +10,11 @@
   "medium": "中",
   "large": "大",
   "widget": {
-    "Weather": "天気",
-    "X_panel": "Xパネル",
-    "Fan": "扇風機",
-    "Everyday": "毎日一言",
-    "Workday_down": "退勤カウントダウン"
+    "weather": "天気",
+    "x_panel": "Xパネル",
+    "fan": "ファン",
+    "everyday": "毎日一言",
+    "workday_down": "退勤カウントダウン"
   },
   "tabList": {
     "text_one": "データ統計",
@@ -25,16 +25,16 @@
     "index": "データ統計",
     "login": {
       "title": "作品は空です~",
-      "content": "パソコンでコンポーネントを作成してください",
+      "content": "コンピュータでコンポーネントを作成してください",
       "computer_access": "コンピュータでアクセス",
       "button_content": "ログインして作品を作成するためにスキャン",
       "join_home": "2秒後にホームページに移動します"
     },
     "home": {
-      "work_updates": "プロジェクトの進捗",
+      "work_updates": "作品の進捗",
       "today": "今日",
       "pending_collection": "収集待ち",
-      "newCreatorPackage": "新しいクリエイター専用リソースパッケージ",
+      "newCreatorPackage": "新人クリエイター専用リソースパック",
       "my_work": "私の作品",
       "totalWorks": "総作品使用",
       "totalHot": "総熱度値",
@@ -43,15 +43,15 @@
   },
   "growth_center": {
     "index": "成長センター",
-    "hot_value": "人気値",
-    "level_1": "初心者クリエイター",
+    "hot_value": "熱度値",
+    "level_1": "入門クリエイター",
     "level_2": "見習いクリエイター",
     "level_3": "新鋭クリエイター",
     "level_4": "ベテランクリエイター",
     "level_5": "エリートクリエイター",
     "level_6": "有名クリエイター",
     "have_need": "まだ必要",
-    "hot_value_up": "人気値アップ",
+    "hot_value_up": "熱度値アップ",
     "next_stage": "次のステージ",
     "reward": "報酬",
     "exclusive_privilege": "3つの専用特権が解除されました",
@@ -131,7 +131,7 @@
   "popup": {
     "newcomer_resource_kit": {
       "title": "作品審査通過!",
-      "content": "新人リソースパッケージ",
+      "content": "新人リソースパック",
       "limited_time_offer": "限時オファー",
       "discovery_page": "発見ボックス",
       "hundreds_millions": "千万人",
@@ -171,7 +171,7 @@
       "avatar_name_1": "ファラファファ",
       "content_2": "自分のデスクトップウィジェットを作成する",
       "avatar_name_2": "ジンのお気に入り",
-      "content_3": "ミニマリストウィジェット トップウィジェット版",
+      "content_3": "ミニマリストウィジェット Top Widgets版",
       "avatar_name_3": "マックス",
       "content_4": "もう一つのスーパーウィジェット",
       "avatar_name_4": "マックス"
@@ -238,6 +238,23 @@
     "withdrawal_error": "引き出し失敗-返却",
     "everyday_settlement": "毎日の決済",
     "personal_income_tax": "20% 個人偶然所得税",
-    "newcomer_resource_pack": "新人リソースパック"
+    "newcomer_resource_pack": "新人リソースパック",
+    "hot_tips": "ホットバリューは、クリエイターの作品に対するプラットフォームの評価指標であり、クリエイターはコンテンツ作成を通じてより多くのホットバリューを獲得できます。",
+    "hint_card": {
+      "tax_payment": "納税証明書",
+      "online_service": "オンラインカスタマーサービス"
+    },
+    "tax_payment": {
+      "index": "納税証明書",
+      "hint": "個人の偶然所得税は、翌月の15日までに一括で申告する必要があります。",
+      "first_step": "第一歩：",
+      "second_step": "第二歩：",
+      "third_step": "第三歩：",
+      "fourth_step": "第四歩：",
+      "content_1": "携帯のApp Storeを開き、「個人所得税」アプリを検索してダウンロードし、インストールします。",
+      "content_2": "インストールしたアプリを開き、携帯番号またはIDカード番号を使用して登録およびログインします。",
+      "content_3": "アプリのホームページで「収入税明細」機能の入り口を見つけます。",
+      "content_4": "システムの指示に従って、クエリの時間範囲と関連オプションを選択し、個人の偶然所得税の納税情報を取得します。"
+    }
   }
 }

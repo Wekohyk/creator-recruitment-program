@@ -44,4 +44,10 @@ export const routes = [
     component: () => import('@/views/my-wallet/index.vue'),
     meta: { title: 'my-wallet' },
   },
+  // 完税凭证
+  {
+    path: '/tax-payment',
+    component: () => import('@/views/my-wallet/taxPayment.vue'),
+    meta: { title: 'tax-payment' },
+  },
 ];
