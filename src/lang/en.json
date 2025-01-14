@@ -257,17 +257,17 @@
       "content_4": "Follow the system prompts to select the query time range and relevant options to obtain personal occasional income tax payment information."
     },
     "individual_tax_instruction_popup": {
-      "index": "Individual Tax Instruction",
-      "content_1": "When you perform a withdrawal operation, please note the following about the personal occasional income tax payment:",
-      "content_2": "According to the relevant tax laws of the People's Republic of China, personal income tax is payable by individuals who receive occasional income, and you, as a creator, have received occasional income from the TopWidgets editor.",
-      "content_3": "Therefore, we will deduct and pay 20% tax on your personal occasional income.",
-      "content_4": "We deduct and pay personal occasional income tax to comply with the tax laws in force, ensure your legal rights, and also to help maintain a fair tax environment and social order.",
-      "content_5": "Thank you for your support and trust in our platform. If you have any questions, please contact our customer service team at any time. We will be happy to assist you.",
-      "content_6": "Tax Payment Certificate",
-      "content_7": "Online Customer Service",
-      "content_8": "Withdrawal Example:",
-      "content_9": "If the withdrawal amount is 100 yuan, we will deduct and pay 20 yuan (100 yuan × 20%) as personal occasional income tax, and the actual amount received will be 80 yuan.",
-      "know": "I understand"
+      "index": "Explanation of Personal Occasional Income Tax",
+      "content_1": "When performing a withdrawal operation, please pay attention to the following matters regarding the agency payment of personal occasional income tax:",
+      "content_2": "According to relevant tax regulations in our country, individuals are required to pay personal income tax when they receive occasional income. The funds you earn while creating in the TopWidgets editor fall under the",
+      "content_3": "category of personal occasional income.",
+      "content_4": "Therefore, we will withhold and pay your personal occasional income tax at a rate of 20%.",
+      "content_5": "We will act on your behalf to pay the personal occasional income tax.",
+      "content_6": "We withhold and pay personal occasional income tax to comply with national tax laws and regulations, ensuring that your income is legal and compliant. At the same time, this also helps maintain a fair tax environment and social order.",
+      "content_7": "Thank you for your support and trust. If you have any questions, please feel free to contact our customer service team, and we will be happy to assist you.",
+      "content_8": "Example of withdrawal:",
+      "content_9": "If your withdrawal amount is 100 yuan, we will withhold and pay 20 yuan (100 yuan × 20%) as personal occasional income tax, and the actual amount credited will be 80 yuan.",
+      "know": "I understand."
     }
   }
 }

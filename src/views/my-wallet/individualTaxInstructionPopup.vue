@@ -17,16 +17,19 @@ const emit = defineEmits<{
   >
     <div
       v-if="props.visible"
-      class="fixed top-0 left-0 z-99 px-33 w-100vw h-100vh bg-#000000/60 duration-300 transition-all ease-in-out flex-center flex-col"
+      class="fixed top-0 left-0 z-99 w-100vw h-100vh bg-#000000/60 duration-300 transition-all ease-in-out flex-center flex-col"
       @click="emit('update:visible', false)"
     >
-      <div @click.stop class="w-full aspect-[325/462] rounded-20 bg-#FFF p-20">
+      <div
+        @click.stop
+        class="w-full max-w-358 rounded-20 bg-#FFF p-20 flex flex-col"
+      >
         <div class="text-16 lh-22 font-600 text-center text-#000000">
           {{ $t('my_wallet.individual_tax_instruction_popup.index') }}
         </div>
 
         <div
-          class="mt-4 text-12 lh-17 text-$secondaryText flex flex-col gap-20"
+          class="mt-4 text-12 lh-17 text-$secondaryText flex flex-col gap-20 flex-grow"
         >
           <div>
             {{ $t('my_wallet.individual_tax_instruction_popup.content_1') }}
@@ -55,9 +58,7 @@ const emit = defineEmits<{
           </div>
         </div>
 
-        <div
-          class="mt-20 w-full aspect-[285/71] bg-#0A7AFF/10 rounded-15 text-12 lh-17 p-10"
-        >
+        <div class="mt-20 w-full bg-#0A7AFF/10 rounded-15 text-12 lh-17 p-10">
           <span class="font-600 text-#000">
             {{ $t('my_wallet.individual_tax_instruction_popup.content_8') }}
           </span>
