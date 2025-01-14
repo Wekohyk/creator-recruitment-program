@@ -6,12 +6,15 @@
   "year": "Year",
   "month": "Month",
   "day": "Day",
+  "small": "S",
+  "medium": "M",
+  "large": "L",
   "widget": {
     "weather": "Weather",
     "x_panel": "X Panel",
     "fan": "Fan",
     "everyday": "Daily Quote",
-    "workday_down": "Countdown to End of Work"
+    "workday_down": "Work"
   },
   "tabList": {
     "text_one": "Data Statistics",
@@ -24,7 +27,8 @@
       "title": "The work is empty~",
       "content": "Please use a computer to create the component",
       "computer_access": "Computer Access",
-      "button_content": "Scan to log in and create works"
+      "button_content": "Scan to log in and create works",
+      "join_home": "Jump to home page in 2 seconds"
     },
     "home": {
       "work_updates": "Work Updates",
@@ -208,6 +212,32 @@
     "your_no_works": "You currently have no works",
     "please_open": "Please open",
     "web_page": "Web Page",
-    "publish_new_works": "Publish new works~"
+    "publish_new_works": "Publish new works~",
+    "level_content1": "Beginner Creator (Hot Value <2000): Initial Exposure to Creation",
+    "level_content2": "Trainee Creator (Hot Value 2000): Basic Identity and Community Recognition",
+    "level_content3": "Emerging Creator (Hot Value 50000): Unlock More Creative Tools",
+    "level_content4": "Senior Creator (Hot Value 250000): Gain Exclusive Promotion Opportunities",
+    "level_content5": "Elite Creator (Hot Value 500000): Priority Participation in Platform Activities",
+    "level_content6": "Famous Creator (Hot Value 1500000): Maximum Platform Support and Exposure"
+  },
+  "my_wallet": {
+    "index": "My Wallet",
+    "available_withdrawal_amount": "Available Withdrawal Amount",
+    "content_earnings": "Content Creation Earnings",
+    "hot_value": "100 Hot Value = 1.0 Yuan",
+    "go_withdraw": "Go to Withdraw",
+    "total_withdraw": "Total Withdrawal: ",
+    "red_packet_reward": "Red Packet Reward: ",
+    "amount_details": "Amount Details",
+    "inter_growth_reward1": "Trainee Creator-Growth Red Packet Reward",
+    "inter_growth_reward2": "Emerging Creator-Growth Red Packet Reward",
+    "inter_growth_reward3": "Senior Creator-Growth Red Packet Reward",
+    "inter_growth_reward4": "Elite Creator-Growth Red Packet Reward",
+    "inter_growth_reward5": "Famous Creator-Growth Red Packet Reward",
+    "withdrawal": "Withdrawal",
+    "withdrawal_error": "Withdrawal Failed-Returned",
+    "everyday_settlement": "Daily Settlement",
+    "personal_income_tax": "20% Personal Occasional Income Tax",
+    "newcomer_resource_pack": "Newcomer Resource Pack"
   }
 }

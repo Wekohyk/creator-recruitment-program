@@ -2,11 +2,13 @@
 import toast from '@/components/toast';
 import { copyToClipboard } from '@/hooks/index';
 import { useRouter } from 'vue-router';
+import { $t } from '@/lang';
+
 const VUE_URL = 'wekooo.com';
 
 const router = useRouter();
 const login = () => {
-  toast({ message: '你还想登陆? 嘻嘻, 2秒后跳转到主页' });
+  toast({ message: $t('data_statistics.login.join_home') });
   setTimeout(() => {
     router.push('/data-statistics/home');
   }, 2000);

@@ -2,7 +2,7 @@ import zh from './zh.json';
 import en from './en.json';
 import jp from './ja.json';
 import { createI18n } from 'vue-i18n';
-import { getLocale } from '@/utils/tool';
+import { getLocale } from './tool';
 import { Locale } from 'vant';
 import enUS from 'vant/es/locale/lang/en-US';
 import zhCN from 'vant/es/locale/lang/zh-CN';
@@ -25,7 +25,8 @@ const setVantLocale = {
     Locale.use('ja-JP', jaJP);
   },
 };
-const i18n = createI18n({
+
+export const i18n = createI18n({
   locale: initLocale,
   messages: languages,
   legacy: false,

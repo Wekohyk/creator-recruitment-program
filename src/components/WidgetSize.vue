@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { $t } from '@/lang';
 
 const props = defineProps({
   content: String,
@@ -11,10 +12,10 @@ const props = defineProps({
 
 const contentValue = computed(() => {
   return props.content === 'small'
-    ? '小'
+    ? $t('small')
     : props.content === 'medium'
-      ? '中'
-      : '大';
+      ? $t('medium')
+      : $t('large');
 });
 </script>
 

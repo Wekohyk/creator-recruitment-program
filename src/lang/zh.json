@@ -6,6 +6,9 @@
   "year": "年",
   "month": "月",
   "day": "日",
+  "small": "小",
+  "medium": "中",
+  "large": "大",
   "widget": {
     "weather": "天气",
     "x_panel": "X面板",
@@ -24,7 +27,8 @@
       "title": "作品空空如也~",
       "content": "请使用电脑端制作组件",
       "computer_access": "电脑访问",
-      "button_content": "扫码登录创作作品"
+      "button_content": "扫码登录创作作品",
+      "join_home": "2秒后跳转到主页"
     },
     "home": {
       "work_updates": "作品动态",

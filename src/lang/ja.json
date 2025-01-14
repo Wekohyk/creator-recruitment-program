@@ -6,6 +6,9 @@
   "year": "年",
   "month": "月",
   "day": "日",
+  "small": "小",
+  "medium": "中",
+  "large": "大",
   "widget": {
     "Weather": "天気",
     "X_panel": "Xパネル",
@@ -24,7 +27,8 @@
       "title": "作品は空です~",
       "content": "パソコンでコンポーネントを作成してください",
       "computer_access": "コンピュータでアクセス",
-      "button_content": "ログインして作品を作成するためにスキャン"
+      "button_content": "ログインして作品を作成するためにスキャン",
+      "join_home": "2秒後にホームページに移動します"
     },
     "home": {
       "work_updates": "プロジェクトの進捗",
@@ -208,6 +212,32 @@
     "your_no_works": "あなたは現在作品がありません",
     "please_open": "開いてください",
     "web_page": "ウェブページ",
-    "publish_new_works": "新しい作品を発表しよう~"
+    "publish_new_works": "新しい作品を発表しよう~",
+    "level_content1": "初心者クリエイタ (ホットバリュ <2000): 創作への初期接触",
+    "level_content2": "見習いクリエイタ (ホットバリュ 2000): 基本的な身分とコミュニティの認識",
+    "level_content3": "新進クリエイタ (ホットバリュ 50000): さらに多くの創作ツールをアンロック",
+    "level_content4": "シニアクリエイタ (ホットバリュ 250000): 独占的なプロモーション機会を得る",
+    "level_content5": "エリートクリエイタ (ホットバリュ 500000): プラットフォーム活動への優先参加",
+    "level_content6": "有名クリエイタ (ホットバリュ 1500000): 最大のプラットフォームサポートと露出"
+  },
+  "my_wallet": {
+    "index": "私の財布",
+    "available_withdrawal_amount": "引き出し可能な金額",
+    "content_earnings": "コンテンツ作成収益",
+    "hot_value": "100ホットバリュ = 1.0元",
+    "go_withdraw": "引き出しに行く",
+    "total_withdraw": "総引き出し: ",
+    "red_packet_reward": "赤いパケット報酬: ",
+    "amount_details": "金額の詳細",
+    "inter_growth_reward1": "見習いクリエイタ-成長赤いパケット報酬",
+    "inter_growth_reward2": "新進クリエイタ-成長赤いパケット報酬",
+    "inter_growth_reward3": "シニアクリエイタ-成長赤いパケット報酬",
+    "inter_growth_reward4": "エリ-トクリエイタ-成長赤いパケット報酬",
+    "inter_growth_reward5": "有名クリエイタ-成長赤いパケット報酬",
+    "withdrawal": "引き出し",
+    "withdrawal_error": "引き出し失敗-返却",
+    "everyday_settlement": "毎日の決済",
+    "personal_income_tax": "20% 個人偶然所得税",
+    "newcomer_resource_pack": "新人リソースパック"
   }
 }

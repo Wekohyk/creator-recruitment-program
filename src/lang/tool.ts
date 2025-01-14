@@ -1,19 +1,20 @@
 import { computed } from 'vue';
 import { Dayjs } from 'dayjs';
-import { getI18n } from './index';
-import { Languages } from '@/utils/tool';
+import { i18n } from './index';
+import { Languages, Glyi18n } from './i18n';
 
-const i18n = getI18n();
-export function getLocale(lang?: string): Languages {
-  // 此处可以根据实际情况修改 tw.language
-  // lang = lang || tw.language || widget.language;
+export function getLocale(lang?: string, bak: Languages = 'zh'): Languages {
+  lang = navigator.language;
+  if (lang === 'zh') {
+    return 'zh';
+  }
   if (lang?.includes('ja') || lang?.includes('jp')) {
     return 'jp';
   }
   if (lang?.includes('en')) {
     return 'en';
   }
-  return 'zh';
+  return bak;
 }
 
 //响应式的值，需要实时变化用这个
