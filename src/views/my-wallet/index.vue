@@ -4,6 +4,7 @@ import PageLayout from '@/components/PageLayout.vue';
 import { getAuthor, getWallet } from '@/api';
 import { Wallet } from '@/types/user';
 import hintCard from './hintCard.vue';
+import individualTaxInstructionPopup from './individualTaxInstructionPopup.vue';
 
 const myWallet = ref<Wallet>();
 const authorLevel = ref();
@@ -32,6 +33,11 @@ const hotTipsVisible = ref(false);
 const hotTips = () => {
   hotTipsVisible.value = !hotTipsVisible.value;
 };
+
+const taxVisible = ref(false);
+const taxDesc = () => {
+  taxVisible.value = true;
+};
 </script>
 
 <template>
@@ -43,7 +49,7 @@ const hotTips = () => {
     <div class="w-full px-16 pt-16 pb-37">
       <!-- 提现金额 -->
       <div
-        class="mt-16 w-full h-159 rounded-16 bg-gradient-to-b from-#0075FF to-#53A1FF px-16 py-12"
+        class="mt-16 w-full aspect-358/159 rounded-16 bg-gradient-to-b from-#0075FF to-#53A1FF px-16 py-12"
       >
         <div class="flex items-center justify-between">
           <div class="flex items-end gap-4">
@@ -90,7 +96,8 @@ const hotTips = () => {
           </div>
 
           <div
-            class="w-86 h-32 rounded-16 bg-#FFF flex-center text-14 lh-20 text-$positive font-500"
+            class="min-w-86 min-h-32 py-6 px-16 rounded-16 bg-#FFF flex-center text-14 lh-20 text-$positive font-500"
+            @click="taxDesc"
           >
             {{ $t('my_wallet.go_withdraw') }}
           </div>
@@ -175,6 +182,11 @@ const hotTips = () => {
       </div>
     </div>
   </PageLayout>
+
+  <individualTaxInstructionPopup
+    :visible="taxVisible"
+    @update:visible="taxVisible = $event"
+  ></individualTaxInstructionPopup>
 </template>
 
 <style scoped lang="scss"></style>
