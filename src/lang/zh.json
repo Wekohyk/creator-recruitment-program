@@ -268,6 +268,20 @@
       "content_8": "提现例子：",
       "content_9": "如果您提现金额为 100 元，那么我们将代扣代缴 20 元（100 元 × 20%）的个人偶然所得税，实际到账金额为 80 元。",
       "know": "我知道了"
+    },
+    "keyboard": {
+      "exceed_withdrawal_500": "最多提现¥500",
+      "all_withdrawal": "全部提现",
+      "today_withdrawal": "今日提现",
+      "withdrawal_amount": "提现金额",
+      "withdrawal_we_chat": "提现到微信",
+      "remaining_withdrawal": "剩余可提现额度为：",
+      "withdrawal": "提现",
+      "payout_tax": "收益需代缴20%偶然所得税：",
+      "today_remaining": "今日剩余可提现：",
+      "times": "次",
+      "today_no_times": "今日没有提现次数了",
+      "remaining": "剩余"
     }
   }
 }

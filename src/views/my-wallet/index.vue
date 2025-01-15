@@ -5,6 +5,7 @@ import { getAuthor, getWallet } from '@/api';
 import { Wallet } from '@/types/user';
 import hintCard from './hintCard.vue';
 import individualTaxInstructionPopup from './individualTaxInstructionPopup.vue';
+import keyboard from './keyboard.vue';
 
 const myWallet = ref<Wallet>();
 const authorLevel = ref();
@@ -37,6 +38,13 @@ const hotTips = () => {
 const taxVisible = ref(false);
 const taxDesc = () => {
   taxVisible.value = true;
+};
+
+const keyboardVisible = ref(false);
+// 提现 -> 吊起提现金额
+const withdrawal = () => {
+  taxVisible.value = false;
+  keyboardVisible.value = true;
 };
 </script>
 
@@ -185,8 +193,14 @@ const taxDesc = () => {
 
   <individualTaxInstructionPopup
     :visible="taxVisible"
-    @update:visible="taxVisible = $event"
+    @update:visible="withdrawal"
   ></individualTaxInstructionPopup>
+
+  <keyboard
+    :visible="keyboardVisible"
+    @update:visible="keyboardVisible = $event"
+    :moneyContent="myWallet?.moneyContent ?? 0"
+  ></keyboard>
 </template>
 
 <style scoped lang="scss"></style>

@@ -82,3 +82,19 @@ export const compareWidgetSize = (
 export const openTopWidget = () => {
   console.log('openTopWidget');
 };
+
+// 计算从当前时间到午夜的剩余时间
+export const calculateTimeToMidnight = () => {
+  const now = new Date();
+  const midnight = new Date();
+  midnight.setHours(24, 0, 0, 0); // 设置为午夜0点
+  const diff = midnight.getTime() - now.getTime();
+
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  return `${hours.toString().padStart(2, '0')}:${minutes
+    .toString()
+    .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+};

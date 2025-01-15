@@ -268,6 +268,20 @@
       "content_8": "出金の例：",
       "content_9": "もし出金額が100元であれば、私たちは20元（100元 × 20%）の個人偶然所得税を源泉徴収し、実際に受け取る金額は80元となります。",
       "know": "わかりました"
+    },
+    "keyboard": {
+      "exceed_withdrawal_500": "最大引き出し¥500",
+      "all_withdrawal": "すべて引き出す",
+      "today_withdrawal": "今日の引き出し",
+      "withdrawal_amount": "引き出し金額",
+      "withdrawal_we_chat": "WeChatに引き出す",
+      "remaining_withdrawal": "残りの引き出し限度額：",
+      "withdrawal": "引き出し",
+      "payout_tax": "20％の偶然所得税が課される収入：",
+      "today_remaining": "今日の残りの引き出し：",
+      "times": "回",
+      "today_no_times": "今日はこれ以上の引き出しはできません",
+      "remaining": "残り"
     }
   }
 }

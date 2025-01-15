@@ -268,6 +268,20 @@
       "content_8": "Example of withdrawal:",
       "content_9": "If your withdrawal amount is 100 yuan, we will withhold and pay 20 yuan (100 yuan × 20%) as personal occasional income tax, and the actual amount credited will be 80 yuan.",
       "know": "I understand."
+    },
+    "keyboard": {
+      "exceed_withdrawal_500": "Maximum withdrawal ¥500",
+      "all_withdrawal": "Withdraw all",
+      "today_withdrawal": "Today's withdrawal",
+      "withdrawal_amount": "Withdrawal amount",
+      "withdrawal_we_chat": "Withdraw to WeChat",
+      "remaining_withdrawal": "Remaining withdrawal limit:",
+      "withdrawal": "Withdraw",
+      "payout_tax": "Income subject to 20% occasional income tax:",
+      "today_remaining": "Remaining withdrawals today:",
+      "times": "times",
+      "today_no_times": "No more withdrawal attempts today",
+      "remaining": "Remaining"
     }
   }
 }
