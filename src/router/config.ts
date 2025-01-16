@@ -18,6 +18,11 @@ export const routes = [
         component: () => import('@/views/mine/index.vue'),
         meta: { title: 'mine' },
       },
+      {
+        path: '/creator',
+        component: () => import('@/views/creator/index.vue'),
+        meta: { title: 'creator' },
+      },
     ],
   },
   // 成长中心

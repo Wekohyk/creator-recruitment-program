@@ -302,5 +302,8 @@
       "actual_arrival": "税后到账金额",
       "tax_regulations": "按照我国税收法规，您在TopWidgets编辑器的创作所得属个人获偶然所得范畴，所以我们将按20%税率为您代缴个人偶然所得税。"
     }
+  },
+  "creator": {
+    "index": "创作者平台"
   }
 }
