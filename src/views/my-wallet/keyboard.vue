@@ -4,7 +4,11 @@ import key from './key.vue';
 import { $t } from '@/lang';
 import { onMounted, onUnmounted, ref, watch } from 'vue';
 import { calculateTimeToMidnight } from '@/hooks';
+import confirmationBox from '@/components/confirmationBox/index.vue';
+import { useRouter } from 'vue-router';
+import { clearStorageAtMidnight } from '@/hooks/storage';
 
+const router = useRouter();
 const props = defineProps<{
   visible: boolean;
   moneyContent: number;
@@ -14,96 +18,10 @@ const emit = defineEmits<{
   (e: 'update:visible', value: boolean): void;
 }>();
 
-const inputRef = ref<HTMLInputElement>();
-// 提款金额
-const withdrawalAmount = ref<string>('0.0');
-// 是否可以提款
-const withdrawalAmountExcessive = ref<boolean>(false);
-// 本次提款金额
-const thisWithdrawalAmount = ref<string>('0.0');
-// 可提现次数
-const withdrawalTimes = ref<number>(0);
-
-// 点击键盘
-const clickKey = (number: string) => {
-  if (withdrawalAmount.value === '0.0') {
-    withdrawalAmount.value = number;
-  } else {
-    withdrawalAmount.value += number;
-  }
-};
-
-// 回退按钮
-const rollBack = () => {
-  if (withdrawalAmount.value === '0.0') return;
-  withdrawalAmount.value = withdrawalAmount.value.slice(0, -1);
-  if (+withdrawalAmount.value < 500) {
-    withdrawalAmountExcessive.value = false;
-  }
-};
-
-// 提款
-const withdrawal = () => {
-  if (withdrawalTimes.value >= 5) {
-    toast({ message: $t('my_wallet.keyboard.today_no_times') });
-    return;
-  }
-  thisWithdrawalAmount.value = String(
-    Number(thisWithdrawalAmount.value) + Number(withdrawalAmount.value),
-  );
-  withdrawalAmount.value = '0.0';
-  withdrawalAmountExcessive.value = false;
-  withdrawalTimes.value++;
-};
-
-// 全部提款
-const allWithdrawal = () => {
-  withdrawalAmount.value =
-    props.moneyContent - Number(thisWithdrawalAmount.value) > 500
-      ? '500'
-      : String(props.moneyContent - Number(thisWithdrawalAmount.value));
-};
-
-// 处理提现金额发生变化
-watch(
-  () => withdrawalAmount.value,
-  () => {
-    if (!withdrawalAmount.value) {
-      withdrawalAmount.value = '0.0';
-    }
-    // 剩余提款金额
-    const remainingWithdrawalAmount =
-      props.moneyContent - Number(thisWithdrawalAmount.value);
-    if (+withdrawalAmount.value > 500) {
-      toast({ message: $t('my_wallet.keyboard.exceed_withdrawal_500') });
-      withdrawalAmount.value = '500';
-      withdrawalAmountExcessive.value = true;
-      return;
-    }
-    if (+withdrawalAmount.value > remainingWithdrawalAmount) {
-      toast({
-        message:
-          $t('my_wallet.keyboard.remaining_withdrawal') +
-          $t('money_symbol') +
-          (remainingWithdrawalAmount > 500 ? 500 : remainingWithdrawalAmount),
-      });
-      withdrawalAmount.value = String(remainingWithdrawalAmount);
-      withdrawalAmountExcessive.value = true;
-      return;
-    }
-  },
-);
-
-// 弹窗关闭时，清空提现金额
-watch(
-  () => props.visible,
-  newVal => {
-    if (!newVal) {
-      withdrawalAmount.value = '0.0';
-      withdrawalAmountExcessive.value = false;
-    }
-  },
-);
+// 本地存储名称
+const WITHDRAWAL_DATA = 'CREATOR_RECRUITMENT_PROGRAM_WITHDRAWAL_DATA';
+// 是否显示确认框
+const confirmationVisible = ref<boolean>(false);
 
 // 到0点的倒计时
 const countDown = ref<string>();
@@ -113,7 +31,121 @@ onMounted(() => {
   intervalId = setInterval(() => {
     countDown.value = calculateTimeToMidnight();
   }, 1000);
+
+  const withdrawalData = JSON.parse(
+    localStorage.getItem(WITHDRAWAL_DATA) || '{}',
+  );
+  withdrawalTimes.value = withdrawalData.withdrawalTimes || 0;
 });
+
+const inputRef = ref<HTMLInputElement>();
+// 提款金额
+const withdrawalAmount = ref<string>('0');
+// 是否可以提款
+const withdrawalAmountExcessive = ref<boolean>(false);
+// 本次提款金额
+const thisWithdrawalAmount = ref<string>('0');
+// 可提现次数
+const withdrawalTimes = ref<number>(0);
+
+// 点击键盘
+const clickKey = (number: string) => {
+  if (withdrawalAmount.value === '0') {
+    withdrawalAmount.value = number;
+  } else {
+    withdrawalAmount.value += number;
+  }
+
+  if (!withdrawalAmount.value) {
+    withdrawalAmount.value = '0';
+  }
+  // 剩余提款金额
+  const remainingWithdrawalAmount =
+    props.moneyContent - Number(thisWithdrawalAmount.value);
+  if (+withdrawalAmount.value > 500) {
+    toast({ message: $t('my_wallet.keyboard.exceed_withdrawal_500') });
+    withdrawalAmount.value = '500';
+    withdrawalAmountExcessive.value = true;
+    return;
+  }
+  if (+withdrawalAmount.value > remainingWithdrawalAmount) {
+    toast({
+      message:
+        $t('my_wallet.keyboard.remaining_withdrawal') +
+        $t('money_symbol') +
+        (remainingWithdrawalAmount > 500
+          ? 500 - Number(thisWithdrawalAmount.value)
+          : remainingWithdrawalAmount),
+    });
+    withdrawalAmount.value = String(remainingWithdrawalAmount);
+    withdrawalAmountExcessive.value = true;
+    return;
+  }
+};
+
+// 回退按钮
+const rollBack = () => {
+  if (withdrawalAmount.value === '0') return;
+  withdrawalAmount.value = withdrawalAmount.value.slice(0, -1);
+  if (+withdrawalAmount.value < 500) {
+    withdrawalAmountExcessive.value = false;
+  }
+};
+
+const confirmWithdrawal = () => {
+  thisWithdrawalAmount.value = String(
+    Number(thisWithdrawalAmount.value) + Number(withdrawalAmount.value),
+  );
+  withdrawalAmount.value = '0';
+  withdrawalAmountExcessive.value = false;
+  withdrawalTimes.value++;
+
+  localStorage.setItem(
+    WITHDRAWAL_DATA,
+    JSON.stringify({
+      thisWithdrawalAmount: thisWithdrawalAmount.value,
+      withdrawalTimes: withdrawalTimes.value,
+    }),
+  );
+  // 午夜清除存储
+  clearStorageAtMidnight(WITHDRAWAL_DATA);
+  // 关闭弹窗
+  confirmationVisible.value = false;
+  emit('update:visible', false);
+  router.push('/withdrawal-amount-application');
+};
+
+// 提款
+const withdrawal = () => {
+  if (withdrawalAmount.value === '0' || !withdrawalAmount.value) {
+    toast({ message: $t('my_wallet.keyboard.withdrawal_amount_error') });
+    return;
+  }
+  if (withdrawalTimes.value >= 5) {
+    toast({ message: $t('my_wallet.keyboard.today_no_times') });
+    return;
+  }
+  confirmationVisible.value = true;
+};
+
+// 全部提款
+const allWithdrawal = () => {
+  withdrawalAmount.value =
+    props.moneyContent - Number(thisWithdrawalAmount.value) > 500
+      ? String(500 - Number(thisWithdrawalAmount.value))
+      : String(props.moneyContent - Number(thisWithdrawalAmount.value));
+};
+
+// 弹窗关闭时，清空提现金额
+watch(
+  () => props.visible,
+  newVal => {
+    if (!newVal) {
+      withdrawalAmount.value = '0';
+      withdrawalAmountExcessive.value = false;
+    }
+  },
+);
 
 // 在组件卸载时清除倒计时
 onUnmounted(() => {
@@ -205,7 +237,7 @@ const keyboardList = [
                 $t('my_wallet.keyboard.remaining_withdrawal') +
                 $t('money_symbol') +
                 (props.moneyContent - Number(thisWithdrawalAmount) > 500
-                  ? 500
+                  ? 500 - Number(thisWithdrawalAmount)
                   : props.moneyContent - Number(thisWithdrawalAmount))
               }}
             </div>
@@ -261,11 +293,12 @@ const keyboardList = [
               </div>
             </div>
             <div class="w-full h-1 bg-#F2F2F7"></div>
-            <div class="text-12 lh-17 text-$tertiaryText">
+            <div class="text-12 lh-17 text-$tertiaryText flex items-center">
               <span>{{ $t('my_wallet.keyboard.payout_tax') }}</span>
               <span class="font-600">
                 {{ (+withdrawalAmount * 0.2).toFixed(2) }}
               </span>
+              <span class="i-mingcute:question-fill ml-4"></span>
             </div>
 
             <div class="flex flex-col items-center gap-4">
@@ -290,11 +323,11 @@ const keyboardList = [
                 </div>
               </div>
               <div
+                v-if="withdrawalTimes"
                 :class="[
                   'text-12 lh-17',
                   withdrawalTimes >= 5 ? 'text-$red' : 'text-$tertiaryText',
                 ]"
-                v-if="withdrawalTimes"
               >
                 {{
                   $t('my_wallet.keyboard.today_remaining') +
@@ -324,6 +357,13 @@ const keyboardList = [
       </div>
     </div>
   </transition>
+
+  <confirmationBox
+    :visible="confirmationVisible"
+    :content="$t('my_wallet.keyboard.sure_withdraw')"
+    @update:visible="confirmationVisible = $event"
+    @confirm="confirmWithdrawal"
+  ></confirmationBox>
 </template>
 
 <style scoped lang="scss"></style>

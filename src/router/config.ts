@@ -50,4 +50,11 @@ export const routes = [
     component: () => import('@/views/my-wallet/taxPayment.vue'),
     meta: { title: 'tax-payment' },
   },
+  // 提款金额申请
+  {
+    path: '/withdrawal-amount-application',
+    component: () =>
+      import('@/views/my-wallet/withdrawalAmountApplication.vue'),
+    meta: { title: 'withdrawal-amount-application' },
+  },
 ];

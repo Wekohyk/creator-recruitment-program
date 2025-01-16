@@ -194,6 +194,10 @@
       "text2": "《制作规范》",
       "text3": "，请在后续组件制作过程中，严格按照此标准，以便快速通过审核，在我们平台上看到您的精美组件。",
       "text4": "如果您有任何疑问或需要更多指导，请随时与我们联系。我们愿意为您提供协助和支持，帮助您在小组件设计中取得更好的成果。感谢您的理解与合作。"
+    },
+    "confirmation_box": {
+      "confirm": "确认",
+      "cancel": "取消"
     }
   },
   "mine": {
@@ -281,7 +285,22 @@
       "today_remaining": "今日剩余可提现：",
       "times": "次",
       "today_no_times": "今日没有提现次数了",
-      "remaining": "剩余"
+      "remaining": "剩余",
+      "withdrawal_amount_error": "提现金额不能为0",
+      "sure_withdraw": "您确定要提现吗？"
+    },
+    "withdrawal_application_successful": {
+      "index": "提现申请成功",
+      "publish_application": "发起申请",
+      "publish_success": "发起成功",
+      "application_confirmation": "申请确认",
+      "three_working_days": "3个工作日内",
+      "withdrawal_success": "提现成功",
+      "we_chat_balance": "微信余额",
+      "withdrawal_amount": "提现金额",
+      "payout_tax": "偶然所得税20%",
+      "actual_arrival": "税后到账金额",
+      "tax_regulations": "按照我国税收法规，您在TopWidgets编辑器的创作所得属个人获偶然所得范畴，所以我们将按20%税率为您代缴个人偶然所得税。"
     }
   }
 }

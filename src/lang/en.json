@@ -194,6 +194,10 @@
       "text2": "《Production Standards》",
       "text3": ". Please strictly follow these standards in future component production to quickly pass the review and see your exquisite components on our platform.",
       "text4": "If you have any questions or need more guidance, please feel free to contact us. We are willing to provide assistance and support to help you achieve better results in widget design. Thank you for your understanding and cooperation."
+    },
+    "confirmation_box": {
+      "confirm": "confirm",
+      "cancel": "cancel"
     }
   },
   "mine": {
@@ -281,7 +285,22 @@
       "today_remaining": "Remaining withdrawals today:",
       "times": "times",
       "today_no_times": "No more withdrawal attempts today",
-      "remaining": "Remaining"
+      "remaining": "Remaining",
+      "withdrawal_amount_error": "Withdrawal amount cannot be 0",
+      "sure_withdraw": "Are you sure you want to withdraw?"
+    },
+    "withdrawal_application_successful": {
+      "index": "Withdrawal Application Successful",
+      "publish_application": "Submit Application",
+      "publish_success": "Submission Successful",
+      "application_confirmation": "Application Confirmation",
+      "three_working_days": "Within 3 Working Days",
+      "withdrawal_success": "Withdrawal Successful",
+      "we_chat_balance": "WeChat Balance",
+      "withdrawal_amount": "Withdrawal Amount",
+      "payout_tax": "Occasional Income Tax 20%",
+      "actual_arrival": "Net Amount After Tax",
+      "tax_regulations": "According to China's tax regulations, your earnings from the TopWidgets editor are considered personal occasional income, and we will withhold a 20% tax on your behalf."
     }
   }
 }

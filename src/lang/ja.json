@@ -194,6 +194,10 @@
       "text2": "《制作基準》",
       "text3": "をご参照ください。今後のコンポーネント制作において、この基準を厳守することで、迅速にレビューを通過し、当プラットフォームであなたの素晴らしいコンポーネントを見ることができます。",
       "text4": "ご質問やさらなる指導が必要な場合は、いつでもお気軽にお問い合わせください。私たちは、ウィジェットデザインでより良い成果を上げるために、支援とサポートを提供することを喜んでいます。ご理解とご協力に感謝いたします。"
+    },
+    "confirmation_box": {
+      "confirm": "確認",
+      "cancel": "キャンセル"
     }
   },
   "mine": {
@@ -281,7 +285,22 @@
       "today_remaining": "今日の残りの引き出し：",
       "times": "回",
       "today_no_times": "今日はこれ以上の引き出しはできません",
-      "remaining": "残り"
+      "remaining": "残り",
+      "withdrawal_amount_error": "引き出し金額は0にできません",
+      "sure_withdraw": "本当に引き出しますか？"
+    },
+    "withdrawal_application_successful": {
+      "index": "出金申請成功",
+      "publish_application": "申請を提出",
+      "publish_success": "提出成功",
+      "application_confirmation": "申請確認",
+      "three_working_days": "3営業日以内",
+      "withdrawal_success": "出金成功",
+      "we_chat_balance": "WeChat残高",
+      "withdrawal_amount": "出金金額",
+      "payout_tax": "偶然所得税20%",
+      "actual_arrival": "税引後の受取金額",
+      "tax_regulations": "中国の税法に基づき、TopWidgetsエディタからの収益は個人の偶然所得と見なされ、20％の税金が差し引かれます。"
     }
   }
 }
