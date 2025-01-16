@@ -1,59 +1,69 @@
 import request from '@/utils/request';
 import { AuthorData, InviteNewUsers, MyWork, NoticeList } from '@/types/user';
 import { ReviewList } from '@/types/review';
+import { CreatorHotTrend } from '@/types/creator';
 
 /**
- * Get the works of the current user
- * @returns The works of the current user
+ * 获取当前用户的作品
+ * @returns 当前用户的作品
  */
 export const getMyWork = async (): Promise<MyWork[]> => {
-  // Get the works of the current user from the server
+  // 从服务器获取当前用户的作品
   const response = await request.get('/my-work');
-  // Return the works
+  // 返回作品
   return response.data;
 };
 
 /**
- * Get the author information
- * @returns The author information
+ * 获取作者信息
+ * @returns 作者信息
  */
 export const getAuthor = async (): Promise<AuthorData> => {
-  // Get the author information from the server
+  // 从服务器获取作者信息
   const response = await request.get('/author');
-  // Return the author information
+  // 返回作者信息
   return response.data;
 };
 
 /**
- * Get the notice list
- * @returns The notice list
+ * 获取创作者热榜
+ * @returns 创作者热榜
+ */
+export const getCreatorHotTrend = async (): Promise<CreatorHotTrend> => {
+  const response = await request.get('/creator-hot-trend');
+  return response.data;
+};
+
+/**
+ * 获取通知列表
+ * @returns 通知列表
  */
 export const getNotice = async (): Promise<NoticeList[]> => {
-  // Get the notice list from the server
+  // 从服务器获取通知列表
   const response = await request.get('/notice');
-  // Return the notice list
+  // 返回通知列表
   return response.data;
 };
 
 /**
- * Get the review information
- * @returns The review information
+ * 获取审核信息
+ * @returns 审核信息
  */
 export const getReview = async (): Promise<ReviewList[]> => {
-  // Get the review information from the server
+  // 从服务器获取审核信息
   const response = await request.get('/review-information');
-  // Return the review information
+  // 返回审核信息
   return response.data;
 };
 
 export const getInviteNewUsers = async (): Promise<InviteNewUsers[]> => {
-  // Get the invite new users from the server
+  // 从服务器获取邀请新用户的信息
   const response = await request.get('/invite-new-users');
-  // Return the invite new users
+  // 返回邀请新用户的信息
   return response.data;
 };
 
-// 获取钱包
+// 获取钱包信息
 export const getWallet = async () => {
   const response = await request.get('/wallet');
   return response.data;

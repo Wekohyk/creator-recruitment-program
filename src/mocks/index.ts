@@ -49,6 +49,17 @@ createServer({
       return { ...data, moneyData };
     });
 
+    // handle GET 创作者热榜
+    this.get('/creator-hot-trend', async () => {
+      const data = await Promise.all(
+        Array.from({ length: 10 }, async () => {
+          const hotTrend = await authorMirage();
+          return hotTrend;
+        }),
+      );
+      return data;
+    });
+
     // handle GET 通知信息
     this.get('/notice', () => {
       const data = Array.from({ length: getRandomNumber(0, 20) }, () =>
@@ -82,6 +93,7 @@ createServer({
       return data;
     });
 
+    // handle GET 钱包信息
     this.get('/wallet', () => {
       const data = myWallet();
       return data;

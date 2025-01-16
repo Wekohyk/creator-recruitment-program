@@ -304,6 +304,11 @@
     }
   },
   "creator": {
-    "index": "创作者平台"
+    "index": "创作者平台",
+    "search_creator": "搜索创作者",
+    "hot_trend": "周热度飙升榜",
+    "look_all": "查看全部",
+    "hot_creator": "热门创作者",
+    "sort_by": "综合排序"
   }
 }
